@@ -1,0 +1,3 @@
+E:/VashLegacy/docs ing/segundo semestre/POO/Laboratorio 2/proyecto/cmake-build-debug/CMakeFiles/proyecto.dir
+E:/VashLegacy/docs ing/segundo semestre/POO/Laboratorio 2/proyecto/cmake-build-debug/CMakeFiles/edit_cache.dir
+E:/VashLegacy/docs ing/segundo semestre/POO/Laboratorio 2/proyecto/cmake-build-debug/CMakeFiles/rebuild_cache.dir

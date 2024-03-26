@@ -1,0 +1,9 @@
+# ninja log v5
+0	9	0	clean	1111c5fbf5d79026
+8	64	7331215837996221	CMakeFiles/proyecto.dir/src/Modelo/Cliente.cpp.obj	5d967907d53cf67a
+1572	1832	7331263315185317	proyecto.exe	5da3be3a15012d0b
+3	1572	7331263312582946	CMakeFiles/proyecto.dir/main.cpp.obj	ca0380b510658fbd
+0	182	7331269856000759	build.ninja	18db2e72310cb0ad
+3	65	7331269857291946	CMakeFiles/proyecto.dir/src/Modelo/Cliente.cpp.obj	9b245d31d3187a79
+10	1557	7331269872191527	CMakeFiles/proyecto.dir/main.cpp.obj	fed7fe8aa97190b2
+1558	1809	7331269874693824	proyecto.exe	5da3be3a15012d0b
