@@ -18,5 +18,9 @@ public:
     static void eliminarFactura();
 };
 
+// static vector<nombre_vector> nombre_vector;
+//define que el vector va a trabajar con elementos vector
+// static porque permite acceder al error sin necesidad de instanciar la clase
+//cuando se declara algo statico es porque se puede acceder desde cualquier parte sin objetos
 
 #endif //PROYECTO_FACTURASERVICE_H

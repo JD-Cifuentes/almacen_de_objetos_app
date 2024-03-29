@@ -1,8 +1,8 @@
 #include <iostream>
 #include <chrono>
 #include "./headers/Vista/MenuFactura.h"
+#include "headers/Vista/MenuProduct.h"
 
-using namespace std;
 
 int main() {
 /*
@@ -18,7 +18,8 @@ int main() {
 */
 
    while(true){
-        MenuFactura::menuParaFacturas();
+        //MenuFactura::menuParaFacturas();
+        MenuProduct::menu_product();
         break;
    }
 
