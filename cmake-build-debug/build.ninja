@@ -79,6 +79,12 @@ build CMakeFiles/proyecto.dir/utils/sources/PrintUtils.cpp.obj: CXX_COMPILER__pr
   OBJECT_DIR = CMakeFiles\proyecto.dir
   OBJECT_FILE_DIR = CMakeFiles\proyecto.dir\utils\sources
 
+build CMakeFiles/proyecto.dir/src/Services/FacturaService.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug E$:/VashLegacy/docs$ ing/segundo$ semestre/POO/Laboratorio$ 2/proyecto/src/Services/FacturaService.cpp || cmake_object_order_depends_target_proyecto
+  DEP_FILE = CMakeFiles\proyecto.dir\src\Services\FacturaService.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\proyecto.dir
+  OBJECT_FILE_DIR = CMakeFiles\proyecto.dir\src\Services
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target proyecto
@@ -87,7 +93,7 @@ build CMakeFiles/proyecto.dir/utils/sources/PrintUtils.cpp.obj: CXX_COMPILER__pr
 #############################################
 # Link the executable proyecto.exe
 
-build proyecto.exe: CXX_EXECUTABLE_LINKER__proyecto_Debug CMakeFiles/proyecto.dir/main.cpp.obj CMakeFiles/proyecto.dir/src/Modelo/Cliente.cpp.obj CMakeFiles/proyecto.dir/src/Modelo/Factura.cpp.obj CMakeFiles/proyecto.dir/src/Vista/MenuFactura.cpp.obj CMakeFiles/proyecto.dir/utils/sources/PrintUtils.cpp.obj
+build proyecto.exe: CXX_EXECUTABLE_LINKER__proyecto_Debug CMakeFiles/proyecto.dir/main.cpp.obj CMakeFiles/proyecto.dir/src/Modelo/Cliente.cpp.obj CMakeFiles/proyecto.dir/src/Modelo/Factura.cpp.obj CMakeFiles/proyecto.dir/src/Vista/MenuFactura.cpp.obj CMakeFiles/proyecto.dir/utils/sources/PrintUtils.cpp.obj CMakeFiles/proyecto.dir/src/Services/FacturaService.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\proyecto.dir

@@ -12,4 +12,6 @@ add_executable(proyecto main.cpp
         src/Vista/MenuFactura.cpp
         utils/sources/PrintUtils.cpp
         utils/headers/PrintUtils.h
+        headers/Services/FacturaService.h
+        src/Services/FacturaService.cpp
 )

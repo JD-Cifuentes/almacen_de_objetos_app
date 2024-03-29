@@ -5,10 +5,37 @@
 #include "../../headers/Vista/MenuFactura.h"
 
 
- void MenuFactura::menuParaFacturas() {
-     PrintUtils::printCenter("Bienvenido al menu de facturas");
-     PrintUtils::printCenter("A continuacion seleccione la opcion deseada");
-     PrintUtils::printTabular("1 - Generar factura");
-     PrintUtils::printTabular("2 - Consultar factura");
-     PrintUtils::printTabular("3 - Eliminar producto de factura");
+void MenuFactura::menuParaFacturas() {
+    PrintUtils::printCenter("Bienvenido al menu de facturas");
+    PrintUtils::printCenter("A continuacion seleccione la opcion deseada");
+    PrintUtils::printTabular("1 - Generar factura");
+    PrintUtils::printTabular("2 - Consultar factura");
+    PrintUtils::printTabular("3 - Consultar todas las facturas");
+    PrintUtils::printTabular("4 - Eliminar producto de factura");
+    PrintUtils::printTabular("0 - Regresar al menu principal");
+
+    int opcion = 0;
+    do {
+        cout << "\n\n";
+        cin >> opcion;
+        switch (opcion) {
+            case 1:
+                FacturaService::crearYGuardarFactura();
+                break;
+            case 2:
+                FacturaService::consultarFactura();
+                break;
+            case 3:
+                FacturaService::consultarTodasLasFactura();
+                break;
+            case 4:
+                FacturaService::eliminarFactura();
+                break;
+            case 0:
+                break;
+            default:
+                std::cout << "Opcion no valida" << std::endl;
+        }
+
+    } while (opcion != 0);
 }

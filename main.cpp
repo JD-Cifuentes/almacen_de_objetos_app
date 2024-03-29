@@ -17,10 +17,10 @@ int main() {
 
 */
 
-   // while(true){
+   while(true){
         MenuFactura::menuParaFacturas();
-
-   // }
+        break;
+   }
 
     return 0;
 }

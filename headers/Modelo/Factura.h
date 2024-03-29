@@ -31,10 +31,3 @@ public:
 
 
 #endif //PROYECTO_FACTURA_H
-
-
-/*
-+ agregarProductoVendido(Producto nuevoProducto)
-+ eliminarProductoVendido(int idProducto)
-+ descripcionFactura() : string
- * */
