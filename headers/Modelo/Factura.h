@@ -23,7 +23,7 @@ public:
     Factura(int idCliente);
 
     //agregarProductoVendido(Producto nuevoProducto);
-    
+
     void descripcionFactura();
 
     int getIdFactura();

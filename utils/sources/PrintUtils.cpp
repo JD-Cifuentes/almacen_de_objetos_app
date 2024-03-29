@@ -17,20 +17,23 @@ void PrintUtils::printCenter(const string& oracion) {
 }
 
 void PrintUtils::printDosColumnas(const string &oracion1, const string &oracion2) {
-    unsigned int anchoEspacio = 15;
-    string espaciador(anchoEspacio, '.');
+    unsigned int anchoEspacio = 25;
+    unsigned int espacios = (anchoEspacio - oracion1.size());
+    string espaciador(espacios, '.');
     cout << oracion1 << espaciador << "" << oracion2 << endl;
 }
 
 void PrintUtils::printDosColumnas(const string &oracion1, int oracion2) {
-    unsigned int anchoEspacio = 15;
-    string espaciador(anchoEspacio, '.');
+    unsigned int anchoEspacio = 25;
+    unsigned int espacios = (anchoEspacio - oracion1.size());
+    string espaciador(espacios, '.');
     cout << oracion1 << espaciador << "" << oracion2 << endl;
 }
 
 void PrintUtils::printDosColumnas(const string &oracion1, chrono::year_month_day oracion2) {
-    unsigned int anchoEspacio = 15;
-    string espaciador(anchoEspacio, '.');
+    unsigned int anchoEspacio = 25;
+    unsigned int espacios = (anchoEspacio - oracion1.size());
+    string espaciador(espacios, '.');
     cout << oracion1 << espaciador << "" << oracion2 << endl;
 }
 

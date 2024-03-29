@@ -8,7 +8,7 @@
 int Factura::contadorIdFactura = 0;
 
 Factura::Factura(int idCliente) {
-    auto actual = std::chrono::system_clock::now();
+    auto actual = chrono::system_clock::now();
     Factura::idCliente = idCliente;
     Factura::idFactura = Factura::contadorIdFactura;
     Factura::fechaFactura = chrono::year_month_day(chrono::floor<chrono::days>(actual));
@@ -21,7 +21,7 @@ void Factura::descripcionFactura() {
     PrintUtils::printDosColumnas("Cliente ID", idCliente);
     PrintUtils::printDosColumnas("Fecha de compra", fechaFactura);
     PrintUtils::printDosColumnas("Total de la compra", totalFactura);
-
+// Factura ID
     for(vector<int> productoFacturado : productosFacturados){
 
     }

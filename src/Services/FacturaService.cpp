@@ -4,6 +4,7 @@
 
 #include "../../headers/Services/FacturaService.h"
 vector<Factura> FacturaService::Facturas;
+
 void FacturaService::crearYGuardarFactura() {
     int idClienteFactura;
     cout << "\nIngrese la identificación del cliente: ";
@@ -43,6 +44,12 @@ void FacturaService::consultarFactura() {
                 return;
             }
         }
+        /*for (int i = 0; i < Facturas.size(); ++i) {
+            if(Facturas[i].getIdFactura() == idFactura){
+                Facturas[i].descripcionFactura();
+                return;
+            }
+        }*/
         cout << "No se encontro la factura solicitada\n";
 
     }
