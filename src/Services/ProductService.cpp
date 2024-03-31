@@ -1,11 +1,8 @@
 #include "../../headers/Services/ProductService.h"
 
-#include <iostream>
-#include <chrono>
-
 //  Verificación de Ingreso de Fecha
 void set_date_expiration(){
-    fflush(stdin);
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     bool date_correct = false;
     std::string date_str;
     while(!date_correct){
@@ -32,20 +29,36 @@ void set_date_expiration(){
 }
 
 void ProductService::create_product(){
-    int code;
-    bool bandera;
-    bandera = false;
+    int code_item, num_stock_item;
+    double price_item;
+    bool bandera = false;
+    std::string name_item;
     std::cout << "Create" << std::endl;
     do{
         std::cout << "Ingrese Codigo Producto: ";
-        std::cin >> code;
-        if (code == true) {
+        std::cin >> code_item;
+
+        int item;
+
+        if (code_item == item) {
             std::cout << "Codigo Ya Existe" << std::endl;
         }else{
             bandera = true;
         }
     } while (!bandera);
+    std::cin.ignore();
+    std::cout << "Ingrese Nombre del Producto: ";
+    getline(std::cin, name_item);
+
+    std::cin.ignore();
+    std::cout << "Ingrese Cantidad Disponible del Producto: ";
+    std::cin >> num_stock_item;
+
+    std::cout << "Ingrese el Precio del Producto ";
+    std::cin >> price_item;
+
     set_date_expiration();
+
 }
 
 void ProductService::search_product(){
