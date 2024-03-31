@@ -1,4 +1,5 @@
 #include "../../headers/Vista/MenuProduct.h"
+#include <iostream>
 
 void menu() {
     //system("cls");
