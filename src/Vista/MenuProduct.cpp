@@ -1,12 +1,7 @@
-//
-// Created by San on 29/03/2024.
-//
-
 #include "../../headers/Vista/MenuProduct.h"
 
-
-void MenuProduct :: menu_product(){
-    int option = 0;
+void menu() {
+    //system("cls");
     PrintUtils::printCenter("Bienvenido al Menu de Productos");
     PrintUtils::printCenter("Seleccione la Opcion Deseada");
     PrintUtils::printTabular("1. Registar Producto");
@@ -14,7 +9,17 @@ void MenuProduct :: menu_product(){
     PrintUtils::printTabular("3. Actualizar Producto");
     PrintUtils::printTabular("4. Eliminar Producto");
     PrintUtils::printTabular("0. Regresar al menu principal");
-
+}
+void MenuProduct :: menu_product(){
+    int option = 0;/*
+    PrintUtils::printCenter("Bienvenido al Menu de Productos");
+    PrintUtils::printCenter("Seleccione la Opcion Deseada");
+    PrintUtils::printTabular("1. Registar Producto");
+    PrintUtils::printTabular("2. Buscar Producto");
+    PrintUtils::printTabular("3. Actualizar Producto");
+    PrintUtils::printTabular("4. Eliminar Producto");
+    PrintUtils::printTabular("0. Regresar al menu principal");
+*/
     /*std::cout << "Seleccione Una Opcion" << std::endl;
     std::cout << "1. Registrar Producto" << std::endl;
     std::cout << "2. Buscar Producto" << std::endl;
@@ -23,6 +28,8 @@ void MenuProduct :: menu_product(){
     std::cout << "0. Regresar" << std::endl;
      */
     do {
+        menu();
+        std::cout << ">";
         cin >> option;
         switch(option){
             case 1:

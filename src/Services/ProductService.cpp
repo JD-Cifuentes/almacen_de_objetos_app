@@ -1,7 +1,3 @@
-//
-// Created by San on 29/03/2024.
-//
-
 #include "../../headers/Services/ProductService.h"
 
 #include <iostream>
