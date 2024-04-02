@@ -11,7 +11,7 @@ void MenuFactura::menuParaFacturas() {
     PrintUtils::printTabular("1 - Generar factura");
     PrintUtils::printTabular("2 - Consultar factura");
     PrintUtils::printTabular("3 - Consultar todas las facturas");
-    PrintUtils::printTabular("4 - Eliminar producto de factura");
+    PrintUtils::printTabular("4 - Eliminar factura");
     PrintUtils::printTabular("0 - Regresar al menu principal");
 
     int opcion = 0;
