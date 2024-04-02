@@ -17,11 +17,5 @@ int main() {
 
 */
 
-   while(true){
-        MenuInicio::menuParaIniciar();
-        MenuFactura::menuParaFacturas();
-        break;
-   }
 
-    return 0;
 }

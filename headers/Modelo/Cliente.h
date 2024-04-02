@@ -11,13 +11,20 @@
 using namespace std;
 
 class Cliente {
+
 private:
     int idCliente;
     string nameCliente;
-    chrono::year_month_day fechaNacimiento;
-
+    int year;
+    int month;
+    int day;
+    chrono::year_month_day fechaNacimiento = chrono::year_month_day(chrono::year(year),
+                                                                    chrono::month(month),
+                                                                    chrono::day(day));
 public:
-    int getidCliente();
+    int getidCliente() const;
+
+    Cliente(int idCliente ,int year, int month, int day , string nameCliente, chrono::year_month_day fechaNacimiento);
 
 };
 

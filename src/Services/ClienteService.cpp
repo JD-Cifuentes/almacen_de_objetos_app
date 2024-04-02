@@ -1,7 +1,7 @@
 //
 // Created by felip on 29/03/2024.
 //
-#include <chrono>
+
 #include "../../headers/Services/ClienteService.h"
 using namespace std;
 vector<Cliente> ClienteService::Clientes;
@@ -9,7 +9,8 @@ vector<Cliente> ClienteService::Clientes;
 void ClienteService::crearCliente() {
     int idCliente , day , month , year;
     string name;
-    chrono::year_month_day fechaNacimiento;
+    chrono::year_month_day fechaNacimiento ;
+
     cout << "Ingrese el ID del cliente: ";
     cin >> idCliente;
     cout << "Ingrese el nombre del cliente: ";
@@ -20,7 +21,8 @@ void ClienteService::crearCliente() {
     cout << "Ingrese la fecha de nacimiento del cliente (Mes)";
     cin >> month;
     cout << "Ingrese la fecha de nacimiento del cliente (Año)";
-    chrono::system_clock::time_point fecha = chrono::system_clock::from_time_t(0);
+    cin >> year;
+    fechaNacimiento = chrono::year_month_day(chrono::year(year), chrono::month(month), chrono::day(day));
 
 
 
@@ -42,3 +44,5 @@ void ClienteService::eliminarCliente() {
         }
     }
 }
+
+
