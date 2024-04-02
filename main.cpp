@@ -1,7 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include "./headers/Vista/MenuFactura.h"
-
+#include "./headers/Vista/MenuInicio.h"
 using namespace std;
 
 int main() {
@@ -18,6 +18,7 @@ int main() {
 */
 
    while(true){
+        MenuInicio::menuParaIniciar();
         MenuFactura::menuParaFacturas();
         break;
    }

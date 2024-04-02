@@ -3,3 +3,9 @@
 //
 
 #include "../../headers/Modelo/Cliente.h"
+
+
+
+int Cliente::getidCliente() {
+    return idCliente;
+}
