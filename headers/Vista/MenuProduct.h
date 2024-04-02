@@ -10,5 +10,4 @@ public:
 
 };
 
-
 #endif //ALMACEN_DE_OBJETOS_APP_MENUPRODUCT_H
