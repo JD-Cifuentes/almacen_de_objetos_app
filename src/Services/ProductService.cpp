@@ -1,6 +1,7 @@
 #include "../../headers/Services/ProductService.h"
+vector<Product> ProductService::Productos;
 
-void set_date(int& _day, int& _month, int& _year) {
+void format_date(int& _day, int& _month, int& _year) {
     bool correct = false;
     do{
         std::cout << "Ingrese Fecha De Vencimiento (DD MM YYYY): ";
@@ -17,48 +18,11 @@ void set_date(int& _day, int& _month, int& _year) {
 }
 
 void ProductService::create_product(){
-    int code_item, num_stock_item;
-    double price_item;
-    bool bandera = false;
-    std::string name_item;
-
     int day, month, year;
-    bool correct = false;
 
-    std::cout << "Create" << std::endl;
-    do{
-        std::cout << "Ingrese Codigo Producto: ";
-        std::cin >> code_item;
-
-        for (const auto& vec : Productos) {
-            if (!vec.empty() && vec[0].getId() == entero) {
-                // El primer elemento del vector actual es igual al entero
-                // Realiza aquí las acciones que deseas realizar si la comparación es verdadera
-                std::cout << "El primer elemento del vector es igual a " << entero << std::endl;
-            } else {
-                // Realiza aquí las acciones que deseas realizar si la comparación es falsa
-                std::cout << "El primer elemento del vector no es igual a " << entero << std::endl;
-            }
-        }
-
-        if (code_item == Productos[0]) {
-            std::cout << "Codigo Ya Existe" << std::endl;
-        }else{
-            bandera = true;
-        }
-    } while (!bandera);
-    std::cout << "Ingrese Nombre del Producto: ";
-    std::cin.ignore();
-    getline(std::cin, name_item);
-
-    std::cout << "Ingrese el Precio del Producto ";
-    std::cin >> price_item;
-
-    std::cout << "Ingrese Cantidad Disponible del Producto: ";
-    std::cin >> num_stock_item;
 
     //  Verificación de Ingreso de Fecha
-    set_date(day, month, year);
+    format_date(day, month, year);
     std::tm time = {};
     time.tm_mday = day;
     time.tm_mon = month - 1;  // tm_mon empieza desde 0
@@ -80,3 +44,27 @@ void ProductService::update_product(){
 void ProductService::delete_product(){
     std::cout << "Delete" << std::endl;
 }
+
+bool available(){
+    int num_stock;
+
+    auto now = std::chrono::system_clock::now();
+    auto date_exp = now + std::chrono::hours(24);
+
+    if(num_stock<1 || (now > date_exp)){
+        std::cout << "No hay Cantidades Disponibles" << std::endl;
+    }
+
+
+
+
+    int year;
+    int month;
+    int day;
+    std::chrono::year_month_day ymd = std::chrono::year_month_day(std::chrono::year(year),
+                                                                  std::chrono::month(month),
+                                                                  std::chrono::day(day));
+
+    return true;
+}
+

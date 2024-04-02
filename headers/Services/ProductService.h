@@ -17,8 +17,6 @@ public:
     static void search_product();
     static void update_product();
     static void delete_product();
-    //void get_date();
-    //void set_date();
 };
 
 #endif //PROYECTO_PRODUCTSERVICE_H

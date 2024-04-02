@@ -7,7 +7,6 @@
 class MenuProduct {
 public:
     static void menu_product();
-
 };
 
 #endif //ALMACEN_DE_OBJETOS_APP_MENUPRODUCT_H

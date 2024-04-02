@@ -11,3 +11,6 @@
 25	663	7334431459614298	CMakeFiles/proyecto.dir/src/Modelo/Product.cpp.obj	ea385101dfb21745
 17	1360	7336092436331612	CMakeFiles/proyecto.dir/src/Vista/MenuProduct.cpp.obj	473297f20e48c715
 4	885	7336175220552839	CMakeFiles/proyecto.dir/src/Services/ProductService.cpp.obj	8740aaefbdaba1ff
+48	2090	7337885272882493	CMakeFiles/proyecto.dir/src/Services/ProductService.cpp.obj	8740aaefbdaba1ff
+5	2092	7337885272882493	CMakeFiles/proyecto.dir/main.cpp.obj	741916c8760fb443
+56	2125	7337885273204017	CMakeFiles/proyecto.dir/src/Vista/MenuProduct.cpp.obj	473297f20e48c715
