@@ -16,3 +16,8 @@
 35	4760	7337872760308232	CMakeFiles/proyecto.dir/src/Modelo/Cliente.cpp.obj	b9afee980bd4290e
 71	4766	7337872760346569	CMakeFiles/proyecto.dir/src/Vista/MenuInicio.cpp.obj	c1556a360ea7be70
 60	4774	7337872760391927	CMakeFiles/proyecto.dir/src/Vista/MenuCliente.cpp.obj	b2876d22297ff461
+13	3515	7337963887766143	CMakeFiles/proyecto.dir/main.cpp.obj	827186c5dfa0cfa7
+25	3520	7337963887831294	CMakeFiles/proyecto.dir/src/Modelo/Cliente.cpp.obj	b9afee980bd4290e
+42	3525	7337963887881514	CMakeFiles/proyecto.dir/src/Vista/MenuCliente.cpp.obj	b2876d22297ff461
+50	3526	7337963887891650	CMakeFiles/proyecto.dir/src/Vista/MenuInicio.cpp.obj	c1556a360ea7be70
+58	3531	7337963887951643	CMakeFiles/proyecto.dir/src/Services/ClienteService.cpp.obj	795a518151135bb

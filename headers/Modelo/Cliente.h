@@ -23,8 +23,8 @@ private:
                                                                     chrono::day(day));
 public:
     int getidCliente() const;
-
-    Cliente(int idCliente ,int year, int month, int day , string nameCliente, chrono::year_month_day fechaNacimiento);
+    Cliente();
+    Cliente(int idCliente , string nameCliente, chrono::year_month_day fechaNacimiento);
 
 };
 

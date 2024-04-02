@@ -8,14 +8,14 @@ vector<Cliente> ClienteService::Clientes;
 
 void ClienteService::crearCliente() {
     int idCliente , day , month , year;
-    string name;
+    string nameCliente;
     chrono::year_month_day fechaNacimiento ;
 
     cout << "Ingrese el ID del cliente: ";
     cin >> idCliente;
     cout << "Ingrese el nombre del cliente: ";
     cin.ignore(); // Ignorar el salto de línea pendiente en el buffer
-    getline(cin, name);
+    getline(cin, nameCliente);
     cout << "Ingrese la fecha de nacimiento del cliente (Dia)";
     cin >> day;
     cout << "Ingrese la fecha de nacimiento del cliente (Mes)";
@@ -23,26 +23,34 @@ void ClienteService::crearCliente() {
     cout << "Ingrese la fecha de nacimiento del cliente (Año)";
     cin >> year;
     fechaNacimiento = chrono::year_month_day(chrono::year(year), chrono::month(month), chrono::day(day));
-
-
-
+    Clientes.push_back(Cliente(idCliente, nameCliente, fechaNacimiento));
 }
 
 
 void ClienteService::eliminarCliente() {
-    int idCliente;
-    cout << "\nIngrese el código del Cliente: ";
-    cin >> idCliente;
-    if (ClienteService::Clientes.empty()){
-        cout << "No hay Clientes creados\n";
-    }else{
-        for (Cliente &f: Clientes) {
-            if(f.getidCliente() == idCliente){
-
-            }
-            cout << "No se encontro un cliente con ese ID\n";
+    system("cls");
+    bool bandera = false;
+    int buscar;
+    cout<<"Ingrese el codigo a buscar: ";
+    cin>>buscar;
+    Cliente Auxiliar;
+    int n = Clientes.size();
+    for(int i = 0; i < n; i++){
+        Auxiliar = Clientes[i];
+        if(Auxiliar.getidCliente() == buscar){
+            bandera = true;
+            cout<<"El cliente con el ID"<<endl;
+            cout<<Auxiliar.getidCliente()<<endl;
+            cout<<"Ya no tiene datos registrados";
+            Clientes.erase(Clientes.begin()+i);
+            break;
         }
     }
+    if(!bandera){
+        cout<<"El Cliente con ID "<<buscar<<
+            " no existe"<<endl<<endl;
+    }
 }
+
 
 
