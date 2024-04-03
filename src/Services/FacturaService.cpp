@@ -31,6 +31,10 @@ void FacturaService::crearYGuardarFactura() {
 
 }
 
+void agregarProducto(){
+//Validar fecha de vencimineto y cantidades
+}
+
 void FacturaService::consultarFactura() {
     int idFactura;
     cout << "\nIngrese el código de la factura: ";

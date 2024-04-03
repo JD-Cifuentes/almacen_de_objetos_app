@@ -38,3 +38,15 @@
 13	1543	7334388107574199	CMakeFiles/proyecto.dir/src/Modelo/Factura.cpp.obj	8c02bc10ca40a3b6
 19	2044	7334388112568728	CMakeFiles/proyecto.dir/utils/sources/PrintUtils.cpp.obj	93f34ebef3ad6e46
 2044	2325	7334388115361262	proyecto.exe	21413944dc13f89d
+42	1767	7337897130537319	CMakeFiles/proyecto.dir/src/Services/FacturaService.cpp.obj	ef629d3d2ecb60b6
+53	1768	7337897130537319	CMakeFiles/proyecto.dir/src/Vista/MenuFactura.cpp.obj	16c213b48e036316
+47	1779	7337897130667437	CMakeFiles/proyecto.dir/src/Modelo/Factura.cpp.obj	8c02bc10ca40a3b6
+59	2276	7337897135621070	CMakeFiles/proyecto.dir/utils/sources/PrintUtils.cpp.obj	93f34ebef3ad6e46
+3	2284	7337897135691131	CMakeFiles/proyecto.dir/main.cpp.obj	fed7fe8aa97190b2
+2284	2900	7337897141831939	proyecto.exe	21413944dc13f89d
+3	1563	7337897687929425	CMakeFiles/proyecto.dir/main.cpp.obj	fed7fe8aa97190b2
+1563	1937	7337897691629140	proyecto.exe	21413944dc13f89d
+3	1624	7337900007332638	CMakeFiles/proyecto.dir/main.cpp.obj	fed7fe8aa97190b2
+1625	2013	7337900011199462	proyecto.exe	21413944dc13f89d
+4	1163	7338028277657728	CMakeFiles/proyecto.dir/src/Services/FacturaService.cpp.obj	ef629d3d2ecb60b6
+1163	1702	7338028283007839	proyecto.exe	21413944dc13f89d

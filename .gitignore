@@ -36,3 +36,4 @@
 *.iws
 *.iml
 *.ipr
+.cmake-build-debug
