@@ -11,26 +11,48 @@ void menu() {
 }
 
 void MenuProduct :: menu_product(){
-    int option = 0;
+    int option;
+    bool validacion = false;
     do {
-        menu();
-        cout << ">";
-        cin >> option;
-        switch(option){
-            case 1:
-                ProductService::crear_producto();
-                break;
-            case 2:
-                ProductService::buscar_producto();
-                break;
-            case 3:
-                ProductService::actualizar_producto();
-                break;
-            case 4:
-                ProductService::eliminar_producto();
-                break;
-            default:
-                cout << "Opcion Incorrecta" << endl;
+        try {
+            menu();
+            cout << ">";
+            cin >> option;
+            if (cin.fail()){
+                cin.clear();
+                cin.ignore();
+                throw invalid_argument("Error: Ingrese un numero entero");
+            }
+            switch(option){
+                case 0:
+                    cout << "Saliendo del programa..." << endl;
+                    validacion = true;
+                    break;
+                case 1:
+                    ProductService::crear_producto();
+                    validacion = true;
+                    break;
+                case 2:
+                    ProductService::buscar_producto();
+                    validacion = true;
+                    break;
+                case 3:
+                    ProductService::actualizar_producto();
+                    validacion = true;
+                    break;
+                case 4:
+                    ProductService::eliminar_producto();
+                    validacion = true;
+                    break;
+                default:
+                    throw invalid_argument("Error: Opcion Incorrecta");
+            }
+        }catch (invalid_argument &ex){
+            cout << ex.what() << endl;
+        }catch (...){
+            cout << "Error: Entrada Invalida" << endl;
+            cin.clear();
+            cin.ignore();
         }
-    } while(option != 0);
+    } while(!validacion);
 }

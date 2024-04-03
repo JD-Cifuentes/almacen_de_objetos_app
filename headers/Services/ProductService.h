@@ -6,6 +6,8 @@
 #include <iostream>
 #include <vector>
 #include <chrono>
+#include <stdexcept>
+#include <limits>
 
 using namespace std;
 

@@ -11,34 +11,141 @@ void ProductService::crear_producto() {
     chrono::year_month_day fecha_vencimiento;
 
     do {
-        bool bandera = false;
-        cout << "Ingrese Id del Producto: " << endl;
-        cin >> idProducto;
-        for (Product Producto: Productos) {
-            if (Producto.get_IdProducto() == idProducto) {
-                cout << "Codigo de Producto ya Existe" << endl;
-                bandera = true;
+        try {
+            bool bandera = false;
+            cout << "Ingrese Id del Producto: " << endl;
+            cin >> idProducto;
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore();
+                throw invalid_argument("Error: Ingrese un numero entero");
+            }
+            for (Product Producto: Productos) {
+                if (Producto.get_IdProducto() == idProducto) {
+                    cout << "Codigo de Producto ya Existe" << endl;
+                    bandera = true;
+                    break;
+                }
+            }
+            if (!bandera) {
                 break;
             }
-        }
-        if (!bandera){
-            break;
+        }catch (runtime_error &ex) {
+            cout << ex.what() << endl;
+        } catch (...) {
+            cout << "Error: Entrada Invalida" << endl;
         }
     }while(true);
 
-    cout << "Ingrese el Nombre del Producto: " << endl;
-    cin.ignore(); // Ignorar el salto de línea pendiente en el buffer
-    getline(cin, nombre_producto);
-    cout << "Ingrese las cantidades del producto: " << endl;
-    cin >> cantidad;
-    cout << "Ingrese el precio de venta del producto: " << endl;
-    cin >> precio_venta;
-    cout << "Ingrese la fecha de vencimiento del producto (Dia): " << endl;
-    cin >> day;
-    cout << "Ingrese la fecha de vencimiento del producto (Mes): " << endl;
-    cin >> month;
-    cout << "Ingrese la fecha de vencimiento del producto (Anio): " << endl;
-    cin >> year;
+    do {
+        try {
+            cout << "Ingrese el Nombre del Producto: " << endl;
+            cin.ignore(); // Ignorar el salto de línea pendiente en el buffer
+            getline(cin, nombre_producto);
+            if (nombre_producto.empty()) {
+                throw invalid_argument("Error: Nombre del Producto no puede estar vacio");
+            }
+            break;
+        } catch (runtime_error &ex) {
+            cout << ex.what() << endl;
+        } catch (...) {
+            cout << "Error: Entrada Invalida" << endl;
+        }
+    } while (true);
+
+    do{
+        try{
+            cout << "Ingrese las cantidades del producto: " << endl;
+            cin >> cantidad;
+            if (cin.fail() || cantidad <= 0) {
+                cin.clear();
+                cin.ignore();
+                throw invalid_argument("Error: Ingrese una Cantidad Valida");
+            }
+            break;
+        }catch (runtime_error &ex) {
+            cout << ex.what() << endl;
+        }catch (...) {
+            cout << "Error: Entrada Invalida" << endl;
+        }
+    }while (true);
+
+    do {
+        try {
+            cout << "Ingrese el precio de venta del producto: " << endl;
+            cin >> precio_venta;
+            if (cin.fail() || precio_venta <= 0) {
+                cin.clear();
+                cin.ignore();
+                throw invalid_argument("Error: Ingrese un Precio Valido");
+            }
+            break;
+        }catch (runtime_error &ex) {
+            cout << ex.what() << endl;
+        }catch (...) {
+            cout << "Error: Entrada Invalida" << endl;
+        }
+    }while (true);
+
+    do {
+        try {
+            cout << "Ingrese la fecha de vencimiento del producto (Dia): " << endl;
+            cin >> day;
+            if (cin.fail() || day <= 0 || day > 31) {
+                cin.clear();
+                cin.ignore();
+                throw invalid_argument("Error: Ingrese un Dia Valido");
+            }
+            break;
+        }catch(runtime_error &ex) {
+            cout << ex.what() << endl;
+        }catch (...) {
+            cout << "Error: Entrada Invalida" << endl;
+        }
+    }while (true);
+
+    do{
+        try{
+            cout << "Ingrese la fecha de vencimiento del producto (Mes): " << endl;
+            cin >> month;
+            if (cin.fail() || month <= 0 || month > 12) {
+                cin.clear();
+                cin.ignore();
+                throw invalid_argument("Error: Ingrese un Mes Valido");
+            }
+            break;
+        } catch (invalid_argument &ex) {
+            cout << ex.what() << endl;
+            cin.clear();
+            cin.ignore();
+        } catch (...) {
+            cout << "Error: Ocurrió un error inesperado" << endl;
+            cin.clear();
+            cin.ignore();
+        }
+    }while (true);
+
+    do {
+        try{
+            cout << "Ingrese la fecha de vencimiento del producto (Anio): " << endl;
+            cin >> year;
+            if (cin.fail() || year < 2023) {
+                cin.clear();
+                cin.ignore();
+                throw invalid_argument("Error: Ingrese un Anio Valido");
+            }
+            break;
+        } catch (invalid_argument &ex) {
+            cout << ex.what() << endl;
+            cin.clear();
+            cin.ignore();
+        } catch (...) {
+            cout << "Error: Ocurrió un error inesperado" << endl;
+            cin.clear();
+            cin.ignore();
+        }
+    }while (true);
+
     fecha_vencimiento = chrono::year_month_day(chrono::year(year),
                                                chrono::month(month),
                                                chrono::day(day));
@@ -46,21 +153,37 @@ void ProductService::crear_producto() {
     cout << "Producto ha sido Registrado" << endl;
 }
 
+
 void ProductService::buscar_producto() {
-    int buscar_producto;
-    cout << "Ingrese el codigo del Producto: " << endl;
-    cin >> buscar_producto;
-    bool bandera = false;
-    for (Product Producto: Productos) {
-        if (Producto.get_IdProducto() == buscar_producto) {
-            Producto.show_product();
-            bandera = true;
+    do{
+        try {
+            int buscar_producto;
+            cout << "Ingrese el codigo del Producto: " << endl;
+            cin >> buscar_producto;
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore();
+                throw invalid_argument("Error: Ingrese un Numero Entero");
+            }
+            bool bandera = false;
+            for (Product Producto: Productos) {
+                if (Producto.get_IdProducto() == buscar_producto) {
+                    Producto.show_product();
+                    bandera = true;
+                    break;
+                }
+            }
+            if (!bandera) {
+                cout << "No existe producto con el codigo: " << buscar_producto << endl;
+                mostrar_productos();
+            }
             break;
+        } catch (invalid_argument &ex) {
+            cout << ex.what() << endl;
+        } catch (...) {
+            cout << "Error: Ocurrió un error inesperado" << endl;
         }
-    }if (!bandera){
-        cout << "No existe producto con el codigo: " << buscar_producto << endl;
-        mostrar_productos();
-    }
+    } while (true);
 }
 
 void ProductService::actualizar_producto(){
@@ -69,25 +192,133 @@ void ProductService::actualizar_producto(){
     string nombre_producto;
     bool bandera = false;
     chrono::year_month_day fecha_vencimiento;
-
-    cout << "Ingrese Id del Producto a ACTUALIZAR: " << endl;
-    cin >> idProducto;
+    do {
+        try {
+            cout << "Ingrese Id del Producto a ACTUALIZAR: " << endl;
+            cin >> idProducto;
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore();
+                throw invalid_argument("Error: Ingrese un numero entero");
+            }
+            break;
+        } catch (invalid_argument &ex) {
+            cout << ex.what() << endl;
+        } catch (...) {
+            cout << "Error: Entrada Invalida" << endl;
+            cin.clear();
+            cin.ignore();
+        }
+    }while(true);
     for (auto it = Productos.begin(); it != Productos.end(); ++it) {
         if (it->get_IdProducto() == idProducto) {
             // Actualizamos el producto si se encuentra
-            cout << "Ingrese el Nombre del Producto: " << endl;
-            cin.ignore(); // Ignorar el salto de línea pendiente en el buffer
-            getline(cin, nombre_producto);
-            cout << "Ingrese las cantidades del producto: " << endl;
-            cin >> cantidad;
-            cout << "Ingrese el precio de venta del producto: " << endl;
-            cin >> precio_venta;
-            cout << "Ingrese la fecha de vencimiento del producto (Dia): " << endl;
-            cin >> day;
-            cout << "Ingrese la fecha de vencimiento del producto (Mes): " << endl;
-            cin >> month;
-            cout << "Ingrese la fecha de vencimiento del producto (Anio): " << endl;
-            cin >> year;
+            do{
+                try{
+                    cout << "Ingrese el Nombre del Producto: " << endl;
+                    cout << "Ingrese el Nombre del Producto: " << endl;
+                    cin.ignore(); // Ignorar el salto de línea pendiente en el buffer
+                    getline(cin, nombre_producto);
+                    if (nombre_producto.empty()) {
+                        throw invalid_argument("Error: Nombre del Producto no puede estar vacio");
+                    }
+                    break;
+                } catch (runtime_error &ex) {
+                    cout << ex.what() << endl;
+                } catch (...) {
+                    cout << "Error: Entrada Invalida" << endl;
+                }
+            } while (true);
+            do{
+                try{
+                    cout << "Ingrese las cantidades del producto: " << endl;
+                    cin >> cantidad;
+                    if (cin.fail() || cantidad <= 0) {
+                        cin.clear();
+                        cin.ignore();
+                        throw invalid_argument("Error: Ingrese una Cantidad Valida");
+                    }
+                    break;
+                }catch (runtime_error &ex) {
+                    cout << ex.what() << endl;
+                }catch (...) {
+                    cout << "Error: Entrada Invalida" << endl;
+                }
+            }while (true);
+            do {
+                try {
+                    cout << "Ingrese el precio de venta del producto: " << endl;
+                    cin >> precio_venta;
+                    if (cin.fail() || precio_venta <= 0) {
+                        cin.clear();
+                        cin.ignore();
+                        throw invalid_argument("Error: Ingrese un Precio Valido");
+                    }
+                    break;
+                }catch (runtime_error &ex) {
+                    cout << ex.what() << endl;
+                }catch (...) {
+                    cout << "Error: Entrada Invalida" << endl;
+                }
+            }while (true);
+            do {
+                try {
+                    cout << "Ingrese la fecha de vencimiento del producto (Dia): " << endl;
+                    cin >> day;
+                    if (cin.fail() || day <= 0 || day > 31) {
+                        cin.clear();
+                        cin.ignore();
+                        throw invalid_argument("Error: Ingrese un Dia Valido");
+                    }
+                    break;
+                }catch(runtime_error &ex) {
+                    cout << ex.what() << endl;
+                }catch (...) {
+                    cout << "Error: Entrada Invalida" << endl;
+                }
+            }while (true);
+
+            do{
+                try{
+                    cout << "Ingrese la fecha de vencimiento del producto (Mes): " << endl;
+                    cin >> month;
+                    if (cin.fail() || month <= 0 || month > 12) {
+                        cin.clear();
+                        cin.ignore();
+                        throw invalid_argument("Error: Ingrese un Mes Valido");
+                    }
+                    break;
+                } catch (invalid_argument &ex) {
+                    cout << ex.what() << endl;
+                    cin.clear();
+                    cin.ignore();
+                } catch (...) {
+                    cout << "Error: Ocurrió un error inesperado" << endl;
+                    cin.clear();
+                    cin.ignore();
+                }
+            }while (true);
+
+            do {
+                try{
+                    cout << "Ingrese la fecha de vencimiento del producto (Anio): " << endl;
+                    cin >> year;
+                    if (cin.fail() || year < 2023) {
+                        cin.clear();
+                        cin.ignore();
+                        throw invalid_argument("Error: Ingrese un Anio Valido");
+                    }
+                    break;
+                } catch (invalid_argument &ex) {
+                    cout << ex.what() << endl;
+                    cin.clear();
+                    cin.ignore();
+                } catch (...) {
+                    cout << "Error: Ocurrió un error inesperado" << endl;
+                    cin.clear();
+                    cin.ignore();
+                }
+            }while (true);
             fecha_vencimiento = chrono::year_month_day(chrono::year(year),
                                                        chrono::month(month),
                                                        chrono::day(day));
@@ -110,19 +341,24 @@ void ProductService::actualizar_producto(){
 void ProductService::eliminar_producto() {
     int idProducto;
     bool bandera = false;
-    cout << "Ingrese Id del Producto a ELIMINAR: " << endl;
-    cin >> idProducto;
-    /*
-    for (Product Producto: Productos) {
-        if (Producto.get_IdProducto() == idProduct) {
-            cout << "Producto Eliminado Correctamente" << endl;
-            bandera = true;
-            break;
+    do{
+        try{
+            cout << "Ingrese Id del Producto a ELIMINAR: " << endl;
+            cin >> idProducto;
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore();
+                throw invalid_argument("Error: Ingrese un numero entero");
+            }break;
+        } catch (invalid_argument &ex) {
+            cout << ex.what() << endl;
+        } catch (...) {
+            cout << "Error: Entrada Invalida" << endl;
+            cin.clear();
+            cin.ignore();
         }
-    }if(!bandera){
-        cout << "No se encontro ningun Producto con el ID: " << endl;
-    }
-    */
+    }while(true);
+
     for (auto it = Productos.begin(); it != Productos.end(); ++it) {
         if (it->get_IdProducto() == idProducto) {
             // Eliminar el producto si se encuentra
@@ -134,11 +370,23 @@ void ProductService::eliminar_producto() {
     }if(!bandera){
         cout << "No se encontro ningun Producto con el ID: " << endl;
     }
+
+
+    /*
+    for (Product Producto: Productos) {
+        if (Producto.get_IdProducto() == idProduct) {
+            cout << "Producto Eliminado Correctamente" << endl;
+            bandera = true;
+            break;
+        }
+    }if(!bandera){
+        cout << "No se encontro ningun Producto con el ID: " << endl;
+    }
+    */
 }
 
 void ProductService::mostrar_productos() {
-    for(Product Producto: Productos){
+    for (Product Producto: Productos) {
         Producto.show_product();
     }
 }
-
