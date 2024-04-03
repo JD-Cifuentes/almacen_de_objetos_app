@@ -22,9 +22,14 @@ private:
                                                                     chrono::month(month),
                                                                     chrono::day(day));
 public:
-    int getidCliente() const;
-    Cliente();
     Cliente(int idCliente , string nameCliente, chrono::year_month_day fechaNacimiento);
+    int getidCliente();
+    string getnameCliente();
+
+    void show_Cliente();
+    void setnameCliente(string nuevoName);
+    void setfechaNacimiento(chrono::year_month_day nuevafecha);
+
 
 };
 
