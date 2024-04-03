@@ -72,24 +72,9 @@ void ProductService::actualizar_producto(){
 
     cout << "Ingrese Id del Producto a ACTUALIZAR: " << endl;
     cin >> idProducto;
-    for (Product Producto: Productos) {
-        if (Producto.get_IdProducto() == idProducto) {
+    for (auto it = Productos.begin(); it != Productos.end(); ++it) {
+        if (it->get_IdProducto() == idProducto) {
             // Actualizamos el producto si se encuentra
-            /*do {
-                bool bandera = false;
-                cout << "Ingrese Id del Producto: " << endl;
-                cin >> idProducto;
-                for (Product Producto: Productos) {
-                    if (Producto.get_IdProducto() == idProducto) {
-                        cout << "Codigo de Producto ya Existe" << endl;
-                        bandera = true;
-                        break;
-                    }
-                }
-                if (!bandera){
-                    break;
-                }
-            }while(true);*/
             cout << "Ingrese el Nombre del Producto: " << endl;
             cin.ignore(); // Ignorar el salto de línea pendiente en el buffer
             getline(cin, nombre_producto);
@@ -108,10 +93,10 @@ void ProductService::actualizar_producto(){
                                                        chrono::day(day));
 
             //Producto.set_IdProducto(idProducto);
-            Producto.set_nombre_producto(nombre_producto);
-            Producto.set_cantidad(cantidad);
-            Producto.set_precio_venta(precio_venta);
-            Producto.set_fecha_vencimiento(fecha_vencimiento);
+            it->set_nombre_producto(nombre_producto);
+            it->set_cantidad(cantidad);
+            it->set_precio_venta(precio_venta);
+            it->set_fecha_vencimiento(fecha_vencimiento);
 
             cout << "Producto Actualizado Correctamente" << endl;
             bandera = true;
@@ -156,3 +141,4 @@ void ProductService::mostrar_productos() {
         Producto.show_product();
     }
 }
+
