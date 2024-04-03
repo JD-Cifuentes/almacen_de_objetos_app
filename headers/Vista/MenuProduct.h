@@ -4,6 +4,8 @@
 #include "../Services/ProductService.h"
 #include <iostream>
 
+using namespace std;
+
 class MenuProduct {
 public:
     static void menu_product();

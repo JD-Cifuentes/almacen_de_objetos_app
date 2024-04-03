@@ -7,16 +7,18 @@
 #include <vector>
 #include <chrono>
 
-class ProductService {
-private:
-    std::chrono::system_clock::time_point date_expiration;
-public:
+using namespace std;
 
-    static std::vector<Product> Productos;
-    static void create_product();
-    static void search_product();
-    static void update_product();
-    static void delete_product();
+class ProductService {
+public:
+    static vector<Product> Productos;
+
+    static void crear_producto();
+    static void buscar_producto();
+    static void actualizar_producto();
+    static void eliminar_producto();
+    static void mostrar_productos();
+
 };
 
 #endif //PROYECTO_PRODUCTSERVICE_H

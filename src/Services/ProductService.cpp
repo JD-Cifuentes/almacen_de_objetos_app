@@ -1,70 +1,158 @@
 #include "../../headers/Services/ProductService.h"
+
 vector<Product> ProductService::Productos;
 
-void format_date(int& _day, int& _month, int& _year) {
-    bool correct = false;
-    do{
-        std::cout << "Ingrese Fecha De Vencimiento (DD MM YYYY): ";
-        std::cin >> _day >> _month >> _year;
-        if(_day <= 0 || _day > 31 || _month <= 0 || _month >12 || _year <= 0 ||
-           (_month == 2 && _day > 28) || (_month == 4 && _day > 30) || (_month == 6 && _day > 30) ||
-           (_month == 9 && _day > 30) || (_month == 11 && _day > 30)){
-            std::cout << "Fecha Incorrecta " << std::endl;
-            std::cout << "Por favor ingrese formato (DD MM YYYY)" << std::endl;
-        }else{
-            correct = true;
+void ProductService::crear_producto() {
+    //system("cls");
+
+    int idProducto, day, month, year, cantidad;
+    double precio_venta;
+    string nombre_producto;
+    chrono::year_month_day fecha_vencimiento;
+
+    do {
+        bool bandera = false;
+        cout << "Ingrese Id del Producto: " << endl;
+        cin >> idProducto;
+        for (Product Producto: Productos) {
+            if (Producto.get_IdProducto() == idProducto) {
+                cout << "Codigo de Producto ya Existe" << endl;
+                bandera = true;
+                break;
+            }
         }
-    }while(!correct);
+        if (!bandera){
+            break;
+        }
+    }while(true);
+
+    cout << "Ingrese el Nombre del Producto: " << endl;
+    cin.ignore(); // Ignorar el salto de línea pendiente en el buffer
+    getline(cin, nombre_producto);
+    cout << "Ingrese las cantidades del producto: " << endl;
+    cin >> cantidad;
+    cout << "Ingrese el precio de venta del producto: " << endl;
+    cin >> precio_venta;
+    cout << "Ingrese la fecha de vencimiento del producto (Dia): " << endl;
+    cin >> day;
+    cout << "Ingrese la fecha de vencimiento del producto (Mes): " << endl;
+    cin >> month;
+    cout << "Ingrese la fecha de vencimiento del producto (Anio): " << endl;
+    cin >> year;
+    fecha_vencimiento = chrono::year_month_day(chrono::year(year),
+                                               chrono::month(month),
+                                               chrono::day(day));
+    Productos.push_back(Product(idProducto, nombre_producto, cantidad, precio_venta, fecha_vencimiento));
+    cout << "Producto ha sido Registrado" << endl;
 }
 
-void ProductService::create_product(){
-    int day, month, year;
-
-
-    //  Verificación de Ingreso de Fecha
-    format_date(day, month, year);
-    std::tm time = {};
-    time.tm_mday = day;
-    time.tm_mon = month - 1;  // tm_mon empieza desde 0
-    time.tm_year = year - 1900; // tm_year es el año - 1900
-    std::time_t date = std::mktime(&time);
-    auto date_expiration = std::chrono::system_clock::from_time_t(date);
-    //Productos.push_back(Product(code_item, name_item, price_item, num_stock_item, date);
-
-}
-
-void ProductService::search_product(){
-    std::cout << "Search" << std::endl;
-}
-
-void ProductService::update_product(){
-    std::cout << "Update" << std::endl;
-}
-
-void ProductService::delete_product(){
-    std::cout << "Delete" << std::endl;
-}
-
-bool available(){
-    int num_stock;
-
-    auto now = std::chrono::system_clock::now();
-    auto date_exp = now + std::chrono::hours(24);
-
-    if(num_stock<1 || (now > date_exp)){
-        std::cout << "No hay Cantidades Disponibles" << std::endl;
+void ProductService::buscar_producto() {
+    int buscar_producto;
+    cout << "Ingrese el codigo del Producto: " << endl;
+    cin >> buscar_producto;
+    bool bandera = false;
+    for (Product Producto: Productos) {
+        if (Producto.get_IdProducto() == buscar_producto) {
+            Producto.show_product();
+            bandera = true;
+            break;
+        }
+    }if (!bandera){
+        cout << "No existe producto con el codigo: " << buscar_producto << endl;
+        mostrar_productos();
     }
-
-
-
-
-    int year;
-    int month;
-    int day;
-    std::chrono::year_month_day ymd = std::chrono::year_month_day(std::chrono::year(year),
-                                                                  std::chrono::month(month),
-                                                                  std::chrono::day(day));
-
-    return true;
 }
 
+void ProductService::actualizar_producto(){
+    int idProducto, day, month, year, cantidad;
+    double precio_venta;
+    string nombre_producto;
+    bool bandera = false;
+    chrono::year_month_day fecha_vencimiento;
+
+    cout << "Ingrese Id del Producto a ACTUALIZAR: " << endl;
+    cin >> idProducto;
+    for (Product Producto: Productos) {
+        if (Producto.get_IdProducto() == idProducto) {
+            // Actualizamos el producto si se encuentra
+            /*do {
+                bool bandera = false;
+                cout << "Ingrese Id del Producto: " << endl;
+                cin >> idProducto;
+                for (Product Producto: Productos) {
+                    if (Producto.get_IdProducto() == idProducto) {
+                        cout << "Codigo de Producto ya Existe" << endl;
+                        bandera = true;
+                        break;
+                    }
+                }
+                if (!bandera){
+                    break;
+                }
+            }while(true);*/
+            cout << "Ingrese el Nombre del Producto: " << endl;
+            cin.ignore(); // Ignorar el salto de línea pendiente en el buffer
+            getline(cin, nombre_producto);
+            cout << "Ingrese las cantidades del producto: " << endl;
+            cin >> cantidad;
+            cout << "Ingrese el precio de venta del producto: " << endl;
+            cin >> precio_venta;
+            cout << "Ingrese la fecha de vencimiento del producto (Dia): " << endl;
+            cin >> day;
+            cout << "Ingrese la fecha de vencimiento del producto (Mes): " << endl;
+            cin >> month;
+            cout << "Ingrese la fecha de vencimiento del producto (Anio): " << endl;
+            cin >> year;
+            fecha_vencimiento = chrono::year_month_day(chrono::year(year),
+                                                       chrono::month(month),
+                                                       chrono::day(day));
+
+            //Producto.set_IdProducto(idProducto);
+            Producto.set_nombre_producto(nombre_producto);
+            Producto.set_cantidad(cantidad);
+            Producto.set_precio_venta(precio_venta);
+            Producto.set_fecha_vencimiento(fecha_vencimiento);
+
+            cout << "Producto Actualizado Correctamente" << endl;
+            bandera = true;
+            break;
+        }
+    }if(!bandera){
+        cout << "No se encontro ningun Producto con el ID: " << endl;
+    }
+}
+
+void ProductService::eliminar_producto() {
+    int idProducto;
+    bool bandera = false;
+    cout << "Ingrese Id del Producto a ELIMINAR: " << endl;
+    cin >> idProducto;
+    /*
+    for (Product Producto: Productos) {
+        if (Producto.get_IdProducto() == idProduct) {
+            cout << "Producto Eliminado Correctamente" << endl;
+            bandera = true;
+            break;
+        }
+    }if(!bandera){
+        cout << "No se encontro ningun Producto con el ID: " << endl;
+    }
+    */
+    for (auto it = Productos.begin(); it != Productos.end(); ++it) {
+        if (it->get_IdProducto() == idProducto) {
+            // Eliminar el producto si se encuentra
+            Productos.erase(it);
+            cout << "Producto Eliminado Correctamente" << endl;
+            bandera = true;
+            break;
+        }
+    }if(!bandera){
+        cout << "No se encontro ningun Producto con el ID: " << endl;
+    }
+}
+
+void ProductService::mostrar_productos() {
+    for(Product Producto: Productos){
+        Producto.show_product();
+    }
+}

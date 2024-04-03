@@ -1,76 +1,64 @@
 #include "../../headers/Modelo/Product.h"
 
+vector<Product> Product::Productos;
+
+int Product::contaIdProducto = 0;
+
+Product::Product(int idProducto, string nombre_producto, int cantidad, double precio_venta, chrono::year_month_day fecha_vencimiento){
+    Product::idProducto = idProducto;
+    Product::nombre_producto = nombre_producto;
+    Product::cantidad = cantidad;
+    Product::precio_venta = precio_venta;
+    Product::fecha_vencimiento = chrono::year_month_day{chrono::year(year),
+                                                        chrono::month(month),
+                                                        chrono::day(day)};
+}
+
 void Product::show_product() {
-    std::time_t date = std::chrono::system_clock::to_time_t(date_expiration);
-    std::cout << "Codigo: " << code_item << std::endl;
-    std::cout << "Nombre: " << name_item << std::endl;
-    std::cout << "Precio: " << price_item << std::endl;
-    std::cout << "Cantidad: " << num_stock << std::endl;
-    std::cout << "Fecha de Vencimiento: "<< std::ctime(&date);
+    //std::time_t date = std::chrono::system_clock::to_time_t(date_expiration);
+    cout << "Codigo: " << idProducto << endl;
+    cout << "Nombre: " << nombre_producto << endl;
+    cout << "Precio: " << precio_venta << endl;
+    cout << "Cantidad: " << cantidad << endl;
+    cout << "Fecha de Vencimiento: " << fecha_vencimiento << endl;
+    //cout << "Disponibilidad: " << habilitacion << endl;
 }
 
-void Product::set_code() {
-    int code_item;
-    bool bandera = false;
-    do{
-        std::cout << "Ingrese Codigo Producto: ";
-        std::cin >> code_item;
-
-        if (code_item == 23) {
-            std::cout << "Codigo Ya Existe" << std::endl;
-        }else{
-            bandera = true;
-        }
-    } while (!bandera);
+void Product::set_IdProducto(int idProducto_nuevo) {
+    idProducto = idProducto_nuevo;
 }
 
-void Product::set_name() {
-    std::string name_item;
-    std::cout << "Ingrese Nombre del Producto: ";
-    std::cin.ignore();
-    getline(std::cin, name_item);
+void Product::set_nombre_producto(string nuevo_nombre) {
+    nombre_producto = nuevo_nombre;
 }
 
-void Product::set_price() {
-    double price_item;
-    std::cout << "Ingrese el Precio del Producto ";
-    std::cin >> price_item;
+void Product::set_cantidad(int cantidad_vendida) {
+    cantidad = cantidad_vendida;
 }
 
-void Product::set_stock() {
-    int num_stock_item;
-    std::cout << "Ingrese Cantidad Disponible del Producto: ";
-    std::cin >> num_stock_item;
+void Product::set_precio_venta(double nuevo_precio) {
+    precio_venta = nuevo_precio;
 }
 
-void Product::set_date() {
-    int day, month, year;
-    //  Verificación de Ingreso de Fecha
-    //format_date(day, month, year);
-    std::tm time = {};
-    time.tm_mday = day;
-    time.tm_mon = month - 1;  // tm_mon empieza desde 0
-    time.tm_year = year - 1900; // tm_year es el año - 1900
-    std::time_t date = std::mktime(&time);
-    auto date_expiration = std::chrono::system_clock::from_time_t(date);
+void Product::set_fecha_vencimiento(chrono::year_month_day nueva_fecha) {
+    fecha_vencimiento = chrono::year_month_day(chrono::year(year),
+                                               chrono::month(month),
+                                               chrono::day(day));
 }
 
-int Product::get_code() {
-    return code_item;
+int Product::get_IdProducto() {
+    return idProducto;
 }
 
-std::string Product::get_name() {
-    return name_item;
+string Product::get_nombre_producto() {
+    return nombre_producto;
 }
 
-double Product::get_price() {
-    return price_item;
+int Product::get_cantidad() {
+    return cantidad;
 }
 
-int Product::get_stock() {
-    return num_stock;
-}
-
-void Product::get_date() {
+double Product::get_precio_venta() {
+    return precio_venta;
 
 }

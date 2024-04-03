@@ -14,23 +14,23 @@ void MenuProduct :: menu_product(){
     int option = 0;
     do {
         menu();
-        std::cout << ">";
+        cout << ">";
         cin >> option;
         switch(option){
             case 1:
-                ProductService::create_product();
+                ProductService::crear_producto();
                 break;
             case 2:
-                ProductService::search_product();
+                ProductService::buscar_producto();
                 break;
             case 3:
-                ProductService::update_product();
+                ProductService::actualizar_producto();
                 break;
             case 4:
-                ProductService::delete_product();
+                ProductService::eliminar_producto();
                 break;
             default:
-                std::cout << "Opcion Incorrecta" << std::endl;
+                cout << "Opcion Incorrecta" << endl;
         }
     } while(option != 0);
 }
