@@ -91,9 +91,9 @@ void ClienteService::crearCliente() {
 
     do {
         try {
-            cout << "Ingrese la fecha de Nacmiento del Clientec(Año): " << endl;
+            cout << "Ingrese la fecha de Nacmiento del Cliente (Año): " << endl;
             cin >> year;
-            if (cin.fail() || year < 2023) {
+            if (cin.fail()) {
                 cin.clear();
                 cin.ignore();
                 throw invalid_argument("Error: Ingrese un Año Valido");
@@ -110,6 +110,7 @@ void ClienteService::crearCliente() {
     vecClientes.push_back(Cliente(idCliente, nameCliente, fechaNacimiento));
     cout<<"Cliente registrado"<<endl;
 }
+
 
 void ClienteService::eliminarCliente() {
     system("cls");
@@ -156,10 +157,106 @@ void ClienteService::consultarTodosLosClientes() {
     }
 }
 
+
 void ClienteService::consultarCliente() {
-    cout<<"Ingresar el ID del cliente "<<endl;
+    do {
+        try {
+            int buscarCliente;
+            cout << "Ingrese el ID del cliente: ";
+            cin >> buscarCliente;
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore();
+                throw invalid_argument("Error: Ingrese un número entero");
+            }
+            bool encontrado = false;
+            for (Cliente cliente : vecClientes) {
+                if (cliente.getidCliente() == buscarCliente) {
+                    cliente.show_Cliente();
+                    encontrado = true;
+                    break;
+                }
+            }
+            if (!encontrado) {
+                cout << "No se encontró ningún cliente con el ID " << buscarCliente << endl;
+            }
+            break;
+        } catch (invalid_argument &ex) {
+            cout << ex.what() << endl;
+        } catch (...) {
+            cout << "Error: Ocurrió un error inesperado" << endl;
+        }
+    } while (true);
 }
 
-void ClienteService::actualizarCliente() {
 
+void ClienteService::actualizarCliente() {
+    system("cls");
+    bool encontrado = false;
+    int idCliente;
+    string opcion;
+
+    // Solicitar al usuario el ID del cliente a actualizar
+    do {
+        try {
+            cout << "Ingrese el ID del cliente a actualizar: ";
+            cin >> idCliente;
+            if (cin.fail() || idCliente <= 0) {
+                cin.clear();
+                cin.ignore();
+                throw invalid_argument("Error: Ingrese un ID de cliente válido");
+            }
+            break;
+        } catch (invalid_argument &ex) {
+            cout << ex.what() << endl;
+        } catch (...) {
+            cout << "Error: Entrada Inválida" << endl;
+            cin.clear();
+            cin.ignore();
+        }
+    } while(true);
+
+    // Buscar el cliente por su ID y actualizar la información si se encuentra
+    for (auto it = vecClientes.begin(); it != vecClientes.end(); ++it) {
+        if (it->getidCliente() == idCliente) {
+            encontrado = true;
+
+            cout << "¿Qué desea actualizar?" << endl;
+            cout << "1. Nombre del cliente" << endl;
+            cout << "2. Fecha de nacimiento del cliente" << endl;
+            cout << "Ingrese su opción: ";
+            cin >> opcion;
+
+            if (opcion == "1") {
+                // Actualizar el nombre del cliente
+                string nuevoNombre;
+                cout << "Ingrese el nuevo nombre del cliente: ";
+                cin.ignore();
+                getline(cin, nuevoNombre);
+                it->setnameCliente(nuevoNombre);
+                cout << "Nombre actualizado correctamente." << endl;
+            } else if (opcion == "2") {
+                // Actualizar la fecha de nacimiento del cliente
+                int day, month, year;
+                cout << "Ingrese la nueva fecha de nacimiento del cliente (Dia Mes Año): ";
+                cin >> day >> month >> year;
+                if (cin.fail() || day <= 0 || month <= 0 || month > 12 || year < 1900) {
+                    cin.clear();
+                    cin.ignore();
+                    cout << "Error: Ingrese una fecha de nacimiento válida" << endl;
+                } else {
+                    it->setfechaNacimiento(chrono::year_month_day(chrono::year(year), chrono::month(month), chrono::day(day)));
+                    cout << "Fecha de nacimiento actualizada correctamente." << endl;
+                }
+            } else {
+                cout << "Opción no válida." << endl;
+            }
+            break;
+        }
     }
+
+    // Si el cliente no se encontró, mostrar un mensaje de error
+    if (!encontrado) {
+        cout << "No se encontró ningún cliente con el ID proporcionado." << endl;
+    }
+}
