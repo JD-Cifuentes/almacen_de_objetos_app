@@ -3,12 +3,13 @@
 #include "./headers/Vista/MenuFactura.h"
 #include "headers/Vista/MenuProduct.h"
 
+#include "./headers/Vista/MenuInicio.h"
 using namespace std;
 
 
 int main() {
-
-    cout << "Hello, World!" << endl;
+/*
+    std::cout << "Hello, World!" << std::endl;
     int year = 2022;
     int month = 3;
     int day = 24;
@@ -19,11 +20,8 @@ int main() {
 
    while(true){
         MenuFactura::menuParaFacturas();
-   while(true){
-        MenuFactura::menuParaFacturas();
         //MenuProduct::menu_product();
         break;
    }
 
-    return 0;
 }

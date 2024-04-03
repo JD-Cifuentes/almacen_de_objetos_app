@@ -19,4 +19,10 @@ add_executable(proyecto main.cpp
         src/Modelo/Product.cpp
         headers/Services/ProductService.h
         src/Services/ProductService.cpp
+        src/Vista/MenuCliente.cpp
+        headers/Vista/MenuCliente.h
+        src/Vista/MenuInicio.cpp
+        headers/Vista/MenuInicio.h
+        src/Services/ClienteService.cpp
+        headers/Services/ClienteService.h
 )
