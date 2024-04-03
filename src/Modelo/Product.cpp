@@ -1,0 +1,64 @@
+#include "../../headers/Modelo/Product.h"
+
+vector<Product> Product::Productos;
+
+int Product::contaIdProducto = 0;
+
+Product::Product(int idProducto, string nombre_producto, int cantidad, double precio_venta, chrono::year_month_day fecha_vencimiento){
+    Product::idProducto = idProducto;
+    Product::nombre_producto = nombre_producto;
+    Product::cantidad = cantidad;
+    Product::precio_venta = precio_venta;
+    Product::fecha_vencimiento = chrono::year_month_day{chrono::year(year),
+                                                        chrono::month(month),
+                                                        chrono::day(day)};
+}
+
+void Product::show_product() {
+    //std::time_t date = std::chrono::system_clock::to_time_t(date_expiration);
+    cout << "Codigo: " << idProducto << endl;
+    cout << "Nombre: " << nombre_producto << endl;
+    cout << "Precio: " << precio_venta << endl;
+    cout << "Cantidad: " << cantidad << endl;
+    cout << "Fecha de Vencimiento: " << fecha_vencimiento << endl;
+    //cout << "Disponibilidad: " << habilitacion << endl;
+}
+
+void Product::set_IdProducto(int idProducto_nuevo) {
+    idProducto = idProducto_nuevo;
+}
+
+void Product::set_nombre_producto(string nuevo_nombre) {
+    nombre_producto = nuevo_nombre;
+}
+
+void Product::set_cantidad(int cantidad_vendida) {
+    cantidad = cantidad_vendida;
+}
+
+void Product::set_precio_venta(double nuevo_precio) {
+    precio_venta = nuevo_precio;
+}
+
+void Product::set_fecha_vencimiento(chrono::year_month_day nueva_fecha) {
+    fecha_vencimiento = chrono::year_month_day(chrono::year(year),
+                                               chrono::month(month),
+                                               chrono::day(day));
+}
+
+int Product::get_IdProducto() {
+    return idProducto;
+}
+
+string Product::get_nombre_producto() {
+    return nombre_producto;
+}
+
+int Product::get_cantidad() {
+    return cantidad;
+}
+
+double Product::get_precio_venta() {
+    return precio_venta;
+
+}

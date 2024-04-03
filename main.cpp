@@ -1,10 +1,13 @@
 #include <iostream>
 #include <chrono>
 #include "./headers/Vista/MenuFactura.h"
+#include "headers/Vista/MenuProduct.h"
 
 using namespace std;
 
+
 int main() {
+
     cout << "Hello, World!" << endl;
     int year = 2022;
     int month = 3;
@@ -14,11 +17,13 @@ int main() {
                                                       chrono::day(2));
     cout << ymd;
 
-
-   /*while(true){
+   while(true){
         MenuFactura::menuParaFacturas();
+   while(true){
+        MenuFactura::menuParaFacturas();
+        //MenuProduct::menu_product();
         break;
    }
 
-    return 0;*/
+    return 0;
 }
