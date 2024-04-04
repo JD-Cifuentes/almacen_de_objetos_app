@@ -6,12 +6,14 @@
 
 
 void PrintUtils::printTabular(const string& oracion) {
-    cout << setw(anchoSangria) << oracion << endl;
+    string espaciador(anchoSangria, ' ');
+    cout << espaciador << oracion << endl;
 }
 
 void PrintUtils::printCenter(const string& oracion) {
     unsigned int espacios = (anchoDeLinea - oracion.size()) / 2;
-    cout << setw(espacios) << oracion << endl;
+    string espaciador(espacios, ' ');
+    cout << espaciador << oracion << endl;
 }
 
 void PrintUtils::printDosColumnas(const string &oracion1, const string &oracion2) {

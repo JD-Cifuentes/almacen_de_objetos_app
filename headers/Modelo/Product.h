@@ -12,7 +12,8 @@ class Product {
 private:
     static vector<Product> Productos;
     static int contaIdProducto;
-    int idProducto, cantidad, year, month, day;
+    //se eliminan variables year, month, day
+    int idProducto, cantidad;
     string nombre_producto;
     double precio_venta;
     chrono::year_month_day fecha_vencimiento;

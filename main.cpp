@@ -6,7 +6,7 @@
 using namespace std;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    /*
     int year = 2022;
     int month = 3;
     int day = 24;
@@ -14,7 +14,7 @@ int main() {
                                                       chrono::month(4),
                                                       chrono::day(2));
     cout << ymd;
-
+*/
    while(true){
         MenuFactura::menuParaFacturas();
         //MenuProduct::menu_product();

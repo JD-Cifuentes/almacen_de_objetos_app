@@ -9,14 +9,13 @@ Product::Product(int idProducto, string nombre_producto, int cantidad, double pr
     Product::nombre_producto = nombre_producto;
     Product::cantidad = cantidad;
     Product::precio_venta = precio_venta;
-    Product::fecha_vencimiento = chrono::year_month_day{chrono::year(year),
-                                                        chrono::month(month),
-                                                        chrono::day(day)};
+    //se corrige asignacion de fecha
+    Product::fecha_vencimiento = fecha_vencimiento;
 }
-
+//se agrega metodo para descontar cantidad
 bool Product::descontarCantidadVendida(int cantidadVendida){
-    if(cantidadVendida < get_cantidad()){
-        cout << "No hay cantidad suficiente" << endl;
+    if(cantidadVendida > get_cantidad()){
+        cout << "No hay cantidad suficiente\n" << endl;
         return false;
     }else{
         int cantidadActualizada = get_cantidad() - cantidadVendida;
@@ -53,9 +52,8 @@ void Product::set_precio_venta(double nuevo_precio) {
 }
 
 void Product::set_fecha_vencimiento(chrono::year_month_day nueva_fecha) {
-    fecha_vencimiento = chrono::year_month_day(chrono::year(year),
-                                               chrono::month(month),
-                                               chrono::day(day));
+    //se corrige asignacion de fecha
+    fecha_vencimiento = nueva_fecha;
 }
 
 int Product::get_IdProducto() {

@@ -6,12 +6,12 @@
 
 vector<Factura> FacturaService::Facturas;
 
-void agregarProducto(Factura nuevaFactura){
+void agregarProductos(Factura& nuevaFactura){
     while(true){
         try {
             string entradaCodProducto;
-            cout << "Ingresé a continuación el código del producto que desea agregar a la factura, \n"
-                    "o ingrese s/S para terminar de agregar productos y finalizar la facturación." << endl;
+            cout << "Ingrese a continuacion el codigo del producto que desea agregar a la factura,"<< endl;
+            cout << "o ingrese s/S para terminar de agregar productos y finalizar la facturacion." << endl;
             cin >> entradaCodProducto;
             if(entradaCodProducto == "s" || entradaCodProducto == "S"){
                 break;
@@ -23,14 +23,14 @@ void agregarProducto(Factura nuevaFactura){
                 }else{
                     if(p.get_cantidad()<1 || p.get_fecha_vencimiento() <= nuevaFactura.getFechaFactura()){
                         cout << "Lo sentimos, no hay cantidad suficiente del producto \n"
-                              "o se ha cumplido su fecha de vencimiento." << endl;
+                              "o se ha cumplido su fecha de vencimiento.\n" << endl;
                     } else{
                         int cantidadAVender;
                         PrintUtils::printDosColumnas("Poducto:", p.get_nombre_producto());
                         PrintUtils::printDosColumnas("Cantidad disponible:", p.get_cantidad());
-                        cout << "Cuántas unidades desea comprar?" << endl;
+                        cout << "Cuantas unidades desea comprar?" << endl;
                         cin >> cantidadAVender;
-                        if(p.descontarCantidadVendida(cantidadAVender)) {
+                        if(p.descontarCantidadVendida(cantidadAVender) && cantidadAVender > 0) {
                             Product productoAAgregar(p.get_IdProducto(),
                                                      p.get_nombre_producto(),
                                                      cantidadAVender,
@@ -54,51 +54,69 @@ void agregarProducto(Factura nuevaFactura){
 }
 
 void FacturaService::crearYGuardarFactura() {
-    int idClienteFactura;
-    try
-    {
-        cout << "\nIngrese la identificación del cliente: ";
-        cin >> idClienteFactura;
-         if(ClienteService::vecClientes.empty()){
-             cout << "No hay clilentes creados\n";
+//!!!!!!!cliente y producto creado para pruebas!!!!!!!!
+Cliente clientePrueba(111,
+                      "Juan D",
+                      chrono::year_month_day(chrono::year(1995),
+                                                            chrono::month(4),
+                                                            chrono::day(2)));
+ClienteService::vecClientes.push_back(clientePrueba);
+
+Product product1(1,
+                 "coke",
+                 20,
+                 1000.0,
+                 chrono::year_month_day(chrono::year(2024),
+                                                            chrono::month(4),
+                                                            chrono::day(7)));
+ProductService::Productos.push_back(product1);
+//!!!!!!!!!!!!!!!!!!!!!!!!
+    try{
+         if(ClienteService::vecClientes.empty() || ProductService::Productos.empty()){
+             cout << "No hay clilentes o productos creados\n";
              return;
          }else{
+             int idClienteFactura;
+             cout << "Ingrese la identificacion del cliente: ";
+             cin >> idClienteFactura;
              for(Cliente c : ClienteService::vecClientes){
                  if(c.getidCliente() != idClienteFactura){
                     continue;
                  }else{
                      Factura nuevaFactura(idClienteFactura);
-                     agregarProducto(nuevaFactura);
-                     cout << "Se cierra la factura\n" << endl;
+                     agregarProductos(nuevaFactura);
+                     FacturaService::Facturas.push_back(nuevaFactura);
+                     cout << "Se cierra la factura" << endl;
                      return;
                  }
              }
-             cout << "El cliente no se encuentra en la base de datos" << endl;
+             cout << "El cliente no se encuentra en la base de datos." << endl;
          }
 
     }catch(...) {
         cout << "Has ingresado un dato errado, intenta nuevamente " << endl;
     }
-
-
 }
 
-
-
 void FacturaService::consultarFactura() {
-    int idFactura;
-    cout << "\nIngrese el código de la factura: ";
-    cin >> idFactura;
     if (FacturaService::Facturas.empty()){
         cout << "No hay facturas creadas\n";
     }else{
-        for (Factura &f: Facturas) {
-            if(f.getIdFactura() == idFactura){
-                f.descripcionFactura();
-                return;
+        try{
+            int idFactura;
+            cout << "\nIngrese el código de la factura: ";
+            cin >> idFactura;
+            for (Factura &f: Facturas) {
+                if(f.getIdFactura() == idFactura){
+                    f.descripcionFactura();
+                    return;
+                }
             }
+            cout << "No se encontro la factura solicitada\n";
+        }catch(...){
+            cout << "Recuerde que sólo puede ingresar números" << endl;
         }
-        cout << "No se encontro la factura solicitada\n";
+
     }
 }
 
@@ -113,17 +131,24 @@ void FacturaService::consultarTodasLasFactura() {
 }
 
 void FacturaService::eliminarFactura() {
-    int idFactura;
-    cout << "\nIngrese el código de la factura: ";
-    cin >> idFactura;
+    /********************/
     if (FacturaService::Facturas.empty()){
         cout << "No hay facturas creadas\n";
     }else{
-        for (Factura &f: Facturas) {
-            if(f.getIdFactura() == idFactura){
-
+        try {
+            int idFactura;
+            cout << "\nIngrese el codigo de la factura: ";
+            cin >> idFactura;
+            for (int i = 0; i < Facturas.size(); ++i) {
+                if(Facturas[i].getIdFactura() == idFactura){
+                    Facturas.erase(Facturas.begin() + i);
+                    cout << "Factura eliminada con exito\n";
+                    break;
+                }
             }
             cout << "No se encontro la factura solicitada\n";
+        }catch(...){
+            cout << "Recuerde que sólo puede ingresar números" << endl;
         }
     }
 }

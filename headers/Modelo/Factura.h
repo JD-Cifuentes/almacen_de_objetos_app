@@ -17,7 +17,7 @@ private:
     int idFactura;
     int idCliente;
     chrono::year_month_day fechaFactura;
-    double totalFactura;
+    double totalFactura = 0;
     vector<Product> productosFacturados;
 
 public:

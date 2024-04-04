@@ -15,12 +15,9 @@ class Cliente {
 private:
     int idCliente;
     string nameCliente;
-    int year;
-    int month;
-    int day;
-    chrono::year_month_day fechaNacimiento = chrono::year_month_day(chrono::year(year),
-                                                                    chrono::month(month),
-                                                                    chrono::day(day));
+
+    //se eliminan variables year, month, day
+    chrono::year_month_day fechaNacimiento;
 public:
     Cliente(int idCliente , string nameCliente, chrono::year_month_day fechaNacimiento);
     int getidCliente();
