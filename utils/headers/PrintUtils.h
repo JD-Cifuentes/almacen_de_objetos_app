@@ -10,7 +10,6 @@
 #include <chrono>
 
 using namespace std;
-
 class PrintUtils {
 public:
     static void printTabular(const string& oracion);

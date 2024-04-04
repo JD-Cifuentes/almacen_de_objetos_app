@@ -14,6 +14,17 @@ Product::Product(int idProducto, string nombre_producto, int cantidad, double pr
                                                         chrono::day(day)};
 }
 
+bool Product::descontarCantidadVendida(int cantidadVendida){
+    if(cantidadVendida < get_cantidad()){
+        cout << "No hay cantidad suficiente" << endl;
+        return false;
+    }else{
+        int cantidadActualizada = get_cantidad() - cantidadVendida;
+        set_cantidad(cantidadActualizada);
+        return true;
+    }
+}
+
 void Product::show_product() {
     //std::time_t date = std::chrono::system_clock::to_time_t(date_expiration);
     cout << "Codigo: " << idProducto << endl;
@@ -23,6 +34,8 @@ void Product::show_product() {
     cout << "Fecha de Vencimiento: " << fecha_vencimiento << endl;
     //cout << "Disponibilidad: " << habilitacion << endl;
 }
+
+
 
 void Product::set_IdProducto(int idProducto_nuevo) {
     idProducto = idProducto_nuevo;
@@ -61,4 +74,7 @@ int Product::get_cantidad() {
 double Product::get_precio_venta() {
     return precio_venta;
 
+}
+chrono::year_month_day Product::get_fecha_vencimiento() {
+    return fecha_vencimiento;
 }

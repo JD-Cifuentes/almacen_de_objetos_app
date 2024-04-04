@@ -42,3 +42,4 @@ void PrintUtils::printDosColumnas(const string &oracion1, double oracion2) {
     string espaciador(anchoEspacio, '.');
     cout << oracion1 << espaciador << oracion2 << endl;
 }
+

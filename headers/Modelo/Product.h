@@ -21,7 +21,7 @@ public:
     Product(int idProducto, string nombre_producto, int cantidad,
             double precio_venta,
             chrono::year_month_day fecha_vencimiento);
-
+    bool descontarCantidadVendida(int cantidadVendida);
     void show_product();
     void set_IdProducto(int idProducto_nuevo);
     void set_nombre_producto(string nuevo_nombre);
@@ -33,8 +33,7 @@ public:
     string get_nombre_producto();
     int get_cantidad();
     double get_precio_venta();
-
-
+    chrono::year_month_day get_fecha_vencimiento();
 };
 
 #endif //ALMACEN_DE_OBJETOS_APP_PRODUCT_H

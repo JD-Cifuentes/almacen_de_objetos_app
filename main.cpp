@@ -2,13 +2,10 @@
 #include <chrono>
 #include "./headers/Vista/MenuFactura.h"
 #include "headers/Vista/MenuProduct.h"
-
 #include "./headers/Vista/MenuInicio.h"
 using namespace std;
 
-
 int main() {
-/*
     std::cout << "Hello, World!" << std::endl;
     int year = 2022;
     int month = 3;
