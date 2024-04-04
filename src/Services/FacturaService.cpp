@@ -121,7 +121,7 @@ void FacturaService::eliminarFactura() {
     }else{
         for (Factura &f: Facturas) {
             if(f.getIdFactura() == idFactura){
-                
+
             }
             cout << "No se encontro la factura solicitada\n";
         }

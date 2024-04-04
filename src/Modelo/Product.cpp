@@ -26,13 +26,12 @@ bool Product::descontarCantidadVendida(int cantidadVendida){
 }
 
 void Product::show_product() {
-    //std::time_t date = std::chrono::system_clock::to_time_t(date_expiration);
     cout << "Codigo: " << idProducto << endl;
     cout << "Nombre: " << nombre_producto << endl;
     cout << "Precio: " << precio_venta << endl;
     cout << "Cantidad: " << cantidad << endl;
     cout << "Fecha de Vencimiento: " << fecha_vencimiento << endl;
-    //cout << "Disponibilidad: " << habilitacion << endl;
+
 }
 
 

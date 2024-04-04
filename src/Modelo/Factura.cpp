@@ -19,16 +19,19 @@ void Factura::agregarProductoVendido(const Product& nuevoProducto) {
 }
 
 void Factura::descripcionFactura() {
-    /*////////////////////*/
     PrintUtils::printDosColumnas("Factura ID", idFactura);
     PrintUtils::printDosColumnas("Cliente ID", idCliente);
     PrintUtils::printDosColumnas("Fecha de compra", fechaFactura);
     PrintUtils::printDosColumnas("Total de la compra", totalFactura);
-
-// Factura ID
-    for(Product productoFacturado : productosFacturados){
-
+    PrintUtils::printFilaProducto("ID_Producto", "Nombre",
+                                  "Cantidad Vendida", "Precio");
+    for(Product productoFac : productosFacturados){
+        PrintUtils::printFilaProducto(productoFac.get_IdProducto(),
+                                      productoFac.get_nombre_producto(),
+                                      productoFac.get_cantidad(),
+                                      productoFac.get_precio_venta());
     }
+    cout << "\n" << endl;
 }
 
 int Factura::getIdFactura() const {
