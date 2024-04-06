@@ -14,27 +14,27 @@ private:
     static int contaIdProducto;
     //se eliminan variables year, month, day
     int idProducto, cantidad;
-    string nombre_producto;
-    double precio_venta;
-    chrono::year_month_day fecha_vencimiento;
+    string nombreProducto;
+    double precioVenta;
+    chrono::year_month_day fechaVencimiento;
 
 public:
-    Product(int idProducto, string nombre_producto, int cantidad,
-            double precio_venta,
-            chrono::year_month_day fecha_vencimiento);
+    Product(int idProducto, string nombreProductos, int cantidad,
+            double precioVentas,
+            chrono::year_month_day fechaVence);
     bool descontarCantidadVendida(int cantidadVendida);
-    void show_product();
-    void set_IdProducto(int idProducto_nuevo);
-    void set_nombre_producto(string nuevo_nombre);
-    void set_cantidad(int cantidad_vendida);
-    void set_precio_venta(double nuevo_precio);
-    void set_fecha_vencimiento(chrono::year_month_day nueva_fecha);
+    void showProduct();
+    void setIdProducto(int idProductoNuevo);
+    void setNombreProducto(string nuevoNombre);
+    void setCantidad(int cantidadVendida);
+    void setPrecioVenta(double nuevoPrecio);
+    void setFechaVencimiento(chrono::year_month_day nuevaFecha);
 
-    int get_IdProducto();
-    string get_nombre_producto();
-    int get_cantidad();
-    double get_precio_venta();
-    chrono::year_month_day get_fecha_vencimiento();
+    int getIdProducto();
+    string getNombreProducto();
+    int getCantidad();
+    double getPrecioVenta();
+    chrono::year_month_day getFechaVencimiento();
 };
 
 #endif //ALMACEN_DE_OBJETOS_APP_PRODUCT_H

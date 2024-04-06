@@ -2,13 +2,13 @@
 
 vector<Product> ProductService::Productos;
 
-void ProductService::crear_producto() {
+void ProductService::crearProducto() {
     //system("cls");
 
     int idProducto, day, month, year, cantidad;
-    double precio_venta;
-    string nombre_producto;
-    chrono::year_month_day fecha_vencimiento;
+    double precioVenta;
+    string nombreProducto;
+    chrono::year_month_day fechaVencimiento;
 
     do {
         try {
@@ -21,7 +21,7 @@ void ProductService::crear_producto() {
                 throw invalid_argument("Error: Ingrese un numero entero");
             }
             for (Product Producto: Productos) {
-                if (Producto.get_IdProducto() == idProducto) {
+                if (Producto.getIdProducto() == idProducto) {
                     cout << "Codigo de Producto ya Existe" << endl;
                     bandera = true;
                     break;
@@ -41,8 +41,8 @@ void ProductService::crear_producto() {
         try {
             cout << "Ingrese el Nombre del Producto: " << endl;
             cin.ignore(); // Ignorar el salto de línea pendiente en el buffer
-            getline(cin, nombre_producto);
-            if (nombre_producto.empty()) {
+            getline(cin, nombreProducto);
+            if (nombreProducto.empty()) {
                 throw invalid_argument("Error: Nombre del Producto no puede estar vacio");
             }
             break;
@@ -73,8 +73,8 @@ void ProductService::crear_producto() {
     do {
         try {
             cout << "Ingrese el precio de venta del producto: " << endl;
-            cin >> precio_venta;
-            if (cin.fail() || precio_venta <= 0) {
+            cin >> precioVenta;
+            if (cin.fail() || precioVenta <= 0) {
                 cin.clear();
                 cin.ignore();
                 throw invalid_argument("Error: Ingrese un Precio Valido");
@@ -146,20 +146,20 @@ void ProductService::crear_producto() {
         }
     }while (true);
 
-    fecha_vencimiento = chrono::year_month_day(chrono::year(year),
-                                               chrono::month(month),
-                                               chrono::day(day));
-    Productos.push_back(Product(idProducto, nombre_producto, cantidad, precio_venta, fecha_vencimiento));
+    fechaVencimiento = chrono::year_month_day(chrono::year(year),
+                                              chrono::month(month),
+                                              chrono::day(day));
+    Productos.push_back(Product(idProducto, nombreProducto, cantidad, precioVenta, fechaVencimiento));
     cout << "Producto ha sido Registrado" << endl;
 }
 
 
-void ProductService::buscar_producto() {
+void ProductService::buscarProducto() {
     do{
         try {
-            int buscar_producto;
+            int buscaProducto;
             cout << "Ingrese el codigo del Producto: " << endl;
-            cin >> buscar_producto;
+            cin >> buscaProducto;
             if (cin.fail()) {
                 cin.clear();
                 cin.ignore();
@@ -167,15 +167,15 @@ void ProductService::buscar_producto() {
             }
             bool bandera = false;
             for (Product Producto: Productos) {
-                if (Producto.get_IdProducto() == buscar_producto) {
-                    Producto.show_product();
+                if (Producto.getIdProducto() == buscaProducto) {
+                    Producto.showProduct();
                     bandera = true;
                     break;
                 }
             }
             if (!bandera) {
-                cout << "No existe producto con el codigo: " << buscar_producto << endl;
-                mostrar_productos();
+                cout << "No existe producto con el codigo: " << buscaProducto << endl;
+                mostrarProductos();
             }
             break;
         } catch (invalid_argument &ex) {
@@ -186,12 +186,12 @@ void ProductService::buscar_producto() {
     } while (true);
 }
 
-void ProductService::actualizar_producto(){
+void ProductService::actualizarProducto(){
     int idProducto, day, month, year, cantidad;
-    double precio_venta;
-    string nombre_producto;
+    double precioVenta;
+    string nombreProducto;
     bool bandera = false;
-    chrono::year_month_day fecha_vencimiento;
+    chrono::year_month_day fechaVencimiento;
     do {
         try {
             cout << "Ingrese Id del Producto a ACTUALIZAR: " << endl;
@@ -211,15 +211,15 @@ void ProductService::actualizar_producto(){
         }
     }while(true);
     for (auto it = Productos.begin(); it != Productos.end(); ++it) {
-        if (it->get_IdProducto() == idProducto) {
+        if (it->getIdProducto() == idProducto) {
             // Actualizamos el producto si se encuentra
             do{
                 try{
                     cout << "Ingrese el Nombre del Producto: " << endl;
                     cout << "Ingrese el Nombre del Producto: " << endl;
                     cin.ignore(); // Ignorar el salto de línea pendiente en el buffer
-                    getline(cin, nombre_producto);
-                    if (nombre_producto.empty()) {
+                    getline(cin, nombreProducto);
+                    if (nombreProducto.empty()) {
                         throw invalid_argument("Error: Nombre del Producto no puede estar vacio");
                     }
                     break;
@@ -248,8 +248,8 @@ void ProductService::actualizar_producto(){
             do {
                 try {
                     cout << "Ingrese el precio de venta del producto: " << endl;
-                    cin >> precio_venta;
-                    if (cin.fail() || precio_venta <= 0) {
+                    cin >> precioVenta;
+                    if (cin.fail() || precioVenta <= 0) {
                         cin.clear();
                         cin.ignore();
                         throw invalid_argument("Error: Ingrese un Precio Valido");
@@ -319,15 +319,15 @@ void ProductService::actualizar_producto(){
                     cin.ignore();
                 }
             }while (true);
-            fecha_vencimiento = chrono::year_month_day(chrono::year(year),
-                                                       chrono::month(month),
-                                                       chrono::day(day));
+            fechaVencimiento = chrono::year_month_day(chrono::year(year),
+                                                      chrono::month(month),
+                                                      chrono::day(day));
 
-            //Producto.set_IdProducto(idProducto);
-            it->set_nombre_producto(nombre_producto);
-            it->set_cantidad(cantidad);
-            it->set_precio_venta(precio_venta);
-            it->set_fecha_vencimiento(fecha_vencimiento);
+            //Producto.setIdProducto(idProducto);
+            it->setNombreProducto(nombreProducto);
+            it->setCantidad(cantidad);
+            it->setPrecioVenta(precioVenta);
+            it->setFechaVencimiento(fechaVencimiento);
 
             cout << "Producto Actualizado Correctamente" << endl;
             bandera = true;
@@ -338,7 +338,7 @@ void ProductService::actualizar_producto(){
     }
 }
 
-void ProductService::eliminar_producto() {
+void ProductService::eliminarProducto() {
     int idProducto;
     bool bandera = false;
     do{
@@ -360,7 +360,7 @@ void ProductService::eliminar_producto() {
     }while(true);
 
     for (auto it = Productos.begin(); it != Productos.end(); ++it) {
-        if (it->get_IdProducto() == idProducto) {
+        if (it->getIdProducto() == idProducto) {
             // Eliminar el producto si se encuentra
             Productos.erase(it);
             cout << "Producto Eliminado Correctamente" << endl;
@@ -374,7 +374,7 @@ void ProductService::eliminar_producto() {
 
     /*
     for (Product Producto: Productos) {
-        if (Producto.get_IdProducto() == idProduct) {
+        if (Producto.getIdProducto() == idProduct) {
             cout << "Producto Eliminado Correctamente" << endl;
             bandera = true;
             break;
@@ -385,8 +385,8 @@ void ProductService::eliminar_producto() {
     */
 }
 
-void ProductService::mostrar_productos() {
+void ProductService::mostrarProductos() {
     for (Product Producto: Productos) {
-        Producto.show_product();
+        Producto.showProduct();
     }
 }

@@ -18,28 +18,28 @@ void agregarProductos(Factura& nuevaFactura){
             }
             int CodProducto = stoi(entradaCodProducto);
             for(Product& p : ProductService::Productos){
-                if(p.get_IdProducto() != CodProducto){
+                if(p.getIdProducto() != CodProducto){
                     continue;
                 }else{
-                    if(p.get_cantidad()<1 || p.get_fecha_vencimiento() <= nuevaFactura.getFechaFactura()){
+                    if(p.getCantidad() < 1 || p.getFechaVencimiento() <= nuevaFactura.getFechaFactura()){
                         cout << "Lo sentimos, no hay cantidad suficiente del producto \n"
                               "o se ha cumplido su fecha de vencimiento.\n" << endl;
                     } else{
                         int cantidadAVender;
-                        PrintUtils::printDosColumnas("Poducto:", p.get_nombre_producto());
-                        PrintUtils::printDosColumnas("Cantidad disponible:", p.get_cantidad());
+                        PrintUtils::printDosColumnas("Poducto:", p.getNombreProducto());
+                        PrintUtils::printDosColumnas("Cantidad disponible:", p.getCantidad());
                         cout << "Cuantas unidades desea comprar?" << endl;
                         cin >> cantidadAVender;
                         if(p.descontarCantidadVendida(cantidadAVender) && cantidadAVender > 0) {
-                            Product productoAAgregar(p.get_IdProducto(),
-                                                     p.get_nombre_producto(),
+                            Product productoAAgregar(p.getIdProducto(),
+                                                     p.getNombreProducto(),
                                                      cantidadAVender,
-                                                     p.get_precio_venta(),
-                                                     p.get_fecha_vencimiento());
+                                                     p.getPrecioVenta(),
+                                                     p.getFechaVencimiento());
 
                             nuevaFactura.agregarProductoVendido(productoAAgregar);
-                            double nuevoMonto = productoAAgregar.get_precio_venta() *
-                                    productoAAgregar.get_cantidad() + nuevaFactura.getTotalFactura();
+                            double nuevoMonto = productoAAgregar.getPrecioVenta() *
+                                                productoAAgregar.getCantidad() + nuevaFactura.getTotalFactura();
                             nuevaFactura.setTotalFactura(nuevoMonto);
                             cout << "Producto facturado exitosamente" << endl;
                         }

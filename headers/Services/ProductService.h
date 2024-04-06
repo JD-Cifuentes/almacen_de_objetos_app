@@ -15,11 +15,11 @@ class ProductService {
 public:
     static vector<Product> Productos;
 
-    static void crear_producto();
-    static void buscar_producto();
-    static void actualizar_producto();
-    static void eliminar_producto();
-    static void mostrar_productos();
+    static void crearProducto();
+    static void buscarProducto();
+    static void actualizarProducto();
+    static void eliminarProducto();
+    static void mostrarProductos();
 
 };
 

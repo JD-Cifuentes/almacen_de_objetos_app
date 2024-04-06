@@ -26,10 +26,10 @@ void Factura::descripcionFactura() {
     PrintUtils::printFilaProducto("ID_Producto", "Nombre",
                                   "Cantidad Vendida", "Precio");
     for(Product productoFac : productosFacturados){
-        PrintUtils::printFilaProducto(productoFac.get_IdProducto(),
-                                      productoFac.get_nombre_producto(),
-                                      productoFac.get_cantidad(),
-                                      productoFac.get_precio_venta());
+        PrintUtils::printFilaProducto(productoFac.getIdProducto(),
+                                      productoFac.getNombreProducto(),
+                                      productoFac.getCantidad(),
+                                      productoFac.getPrecioVenta());
     }
     cout << "\n" << endl;
 }

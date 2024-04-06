@@ -10,7 +10,7 @@ void menu() {
     PrintUtils::printTabular("0. Regresar al menu principal");
 }
 
-void MenuProduct :: menu_product(){
+void MenuProduct :: menuProduct(){
     int option;
     bool validacion = false;
     do {
@@ -29,19 +29,19 @@ void MenuProduct :: menu_product(){
                     validacion = true;
                     break;
                 case 1:
-                    ProductService::crear_producto();
+                    ProductService::crearProducto();
                     validacion = true;
                     break;
                 case 2:
-                    ProductService::buscar_producto();
+                    ProductService::buscarProducto();
                     validacion = true;
                     break;
                 case 3:
-                    ProductService::actualizar_producto();
+                    ProductService::actualizarProducto();
                     validacion = true;
                     break;
                 case 4:
-                    ProductService::eliminar_producto();
+                    ProductService::eliminarProducto();
                     validacion = true;
                     break;
                 default:

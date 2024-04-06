@@ -4,74 +4,74 @@ vector<Product> Product::Productos;
 
 int Product::contaIdProducto = 0;
 
-Product::Product(int idProducto, string nombre_producto, int cantidad, double precio_venta, chrono::year_month_day fecha_vencimiento){
+Product::Product(int idProducto, string nombreProductos, int cantidad, double precioVentas, chrono::year_month_day fechaVence){
     Product::idProducto = idProducto;
-    Product::nombre_producto = nombre_producto;
+    Product::nombreProducto = nombreProductos;
     Product::cantidad = cantidad;
-    Product::precio_venta = precio_venta;
+    Product::precioVenta = precioVentas;
     //se corrige asignacion de fecha
-    Product::fecha_vencimiento = fecha_vencimiento;
+    Product::fechaVencimiento = fechaVence;
 }
 //se agrega metodo para descontar cantidad
 bool Product::descontarCantidadVendida(int cantidadVendida){
-    if(cantidadVendida > get_cantidad()){
+    if(cantidadVendida > getCantidad()){
         cout << "No hay cantidad suficiente\n" << endl;
         return false;
     }else{
-        int cantidadActualizada = get_cantidad() - cantidadVendida;
-        set_cantidad(cantidadActualizada);
+        int cantidadActualizada = getCantidad() - cantidadVendida;
+        setCantidad(cantidadActualizada);
         return true;
     }
 }
 
-void Product::show_product() {
+void Product::showProduct() {
     cout << "Codigo: " << idProducto << endl;
-    cout << "Nombre: " << nombre_producto << endl;
-    cout << "Precio: " << precio_venta << endl;
+    cout << "Nombre: " << nombreProducto << endl;
+    cout << "Precio: " << precioVenta << endl;
     cout << "Cantidad: " << cantidad << endl;
-    cout << "Fecha de Vencimiento: " << fecha_vencimiento << endl;
+    cout << "Fecha de Vencimiento: " << fechaVencimiento << endl;
 
 }
 
 
 
-void Product::set_IdProducto(int idProducto_nuevo) {
-    idProducto = idProducto_nuevo;
+void Product::setIdProducto(int idProductoNuevo) {
+    idProducto = idProductoNuevo;
 }
 
-void Product::set_nombre_producto(string nuevo_nombre) {
-    nombre_producto = nuevo_nombre;
+void Product::setNombreProducto(string nuevoNombre) {
+    nombreProducto = nuevoNombre;
 }
 
-void Product::set_cantidad(int cantidad_vendida) {
-    cantidad = cantidad_vendida;
+void Product::setCantidad(int cantidadVendida) {
+    cantidad = cantidadVendida;
 }
 
-void Product::set_precio_venta(double nuevo_precio) {
-    precio_venta = nuevo_precio;
+void Product::setPrecioVenta(double nuevoPrecio) {
+    precioVenta = nuevoPrecio;
 }
 
-void Product::set_fecha_vencimiento(chrono::year_month_day nueva_fecha) {
+void Product::setFechaVencimiento(chrono::year_month_day nuevaFecha) {
     //se corrige asignacion de fecha
-    fecha_vencimiento = nueva_fecha;
+    fechaVencimiento = nuevaFecha;
 }
 
-int Product::get_IdProducto() {
+int Product::getIdProducto() {
     return idProducto;
 }
 
-string Product::get_nombre_producto() {
-    return nombre_producto;
+string Product::getNombreProducto() {
+    return nombreProducto;
 }
 
-int Product::get_cantidad() {
+int Product::getCantidad() {
     return cantidad;
 }
 
-double Product::get_precio_venta() {
-    return precio_venta;
+double Product::getPrecioVenta() {
+    return precioVenta;
 
 }
-chrono::year_month_day Product::get_fecha_vencimiento() {
-    return fecha_vencimiento;
+chrono::year_month_day Product::getFechaVencimiento() {
+    return fechaVencimiento;
 }
