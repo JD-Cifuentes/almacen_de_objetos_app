@@ -3,54 +3,119 @@
 //
 
 #include "../../headers/Services/FacturaService.h"
+
 vector<Factura> FacturaService::Facturas;
 
-void FacturaService::crearYGuardarFactura() {
-    int idClienteFactura;
-    cout << "\nIngrese la identificación del cliente: ";
-    cin >> idClienteFactura;
-    //en espera de la creación de la clase cliente para validar la existencia de este
-    /*
-     * if(ClienteVector.empty()){
-     *  cout << "No hay facturas creadas\n";
-     *  return;
-     * }else{
-     *  for(Cliente c : Clientes::clientes){
-     *   if(c.getIdCliente != idClienteFactura){
-     *      continue;
-     *   }else{
-     *      Factura nuevaFactura(idClienteFactura);
-     *      //CREAR METODO PARA AGREGAR PRODUCTOS
-     *      break;
-     *   }
-     *
-     *  }
-     *
-     * }
-     */
+void agregarProductos(Factura& nuevaFactura){
+    while(true){
+        try {
+            string entradaCodProducto;
+            cout << "Ingrese a continuacion el codigo del producto que desea agregar a la factura,"<< endl;
+            cout << "o ingrese s/S para terminar de agregar productos y finalizar la facturacion." << endl;
+            cin >> entradaCodProducto;
+            if(entradaCodProducto == "s" || entradaCodProducto == "S"){
+                break;
+            }
+            int CodProducto = stoi(entradaCodProducto);
+            for(Product& p : ProductService::Productos){
+                if(p.getIdProducto() != CodProducto){
+                    continue;
+                }else{
+                    if(p.getCantidad() < 1 || p.getFechaVencimiento() <= nuevaFactura.getFechaFactura()){
+                        cout << "Lo sentimos, no hay cantidad suficiente del producto \n"
+                              "o se ha cumplido su fecha de vencimiento.\n" << endl;
+                    } else{
+                        int cantidadAVender;
+                        PrintUtils::printDosColumnas("Poducto:", p.getNombreProducto());
+                        PrintUtils::printDosColumnas("Cantidad disponible:", p.getCantidad());
+                        cout << "Cuantas unidades desea comprar?" << endl;
+                        cin >> cantidadAVender;
+                        if(p.descontarCantidadVendida(cantidadAVender) && cantidadAVender > 0) {
+                            Product productoAAgregar(p.getIdProducto(),
+                                                     p.getNombreProducto(),
+                                                     cantidadAVender,
+                                                     p.getPrecioVenta(),
+                                                     p.getFechaVencimiento());
 
+                            nuevaFactura.agregarProductoVendido(productoAAgregar);
+                            double nuevoMonto = productoAAgregar.getPrecioVenta() *
+                                                productoAAgregar.getCantidad() + nuevaFactura.getTotalFactura();
+                            nuevaFactura.setTotalFactura(nuevoMonto);
+                            cout << "Producto facturado exitosamente" << endl;
+                        }
+                    }
+                    break;
+                }
+            }
+        }catch (...){
+            cout << "El dato ingresado es erróneo, intenta nuevamente.\n" << endl;
+        }
+    }
+}
+
+void FacturaService::crearYGuardarFactura() {
+//!!!!!!!cliente y producto creado para pruebas!!!!!!!!
+Cliente clientePrueba(111,
+                      "Juan D",
+                      chrono::year_month_day(chrono::year(1995),
+                                                            chrono::month(4),
+                                                            chrono::day(2)));
+ClienteService::vecClientes.push_back(clientePrueba);
+
+Product product1(1,
+                 "coke",
+                 20,
+                 1000.0,
+                 chrono::year_month_day(chrono::year(2024),
+                                                            chrono::month(4),
+                                                            chrono::day(7)));
+ProductService::Productos.push_back(product1);
+//!!!!!!!!!!!!!!!!!!!!!!!!
+    try{
+         if(ClienteService::vecClientes.empty() || ProductService::Productos.empty()){
+             cout << "No hay clilentes o productos creados\n";
+             return;
+         }else{
+             int idClienteFactura;
+             cout << "Ingrese la identificacion del cliente: ";
+             cin >> idClienteFactura;
+             for(Cliente c : ClienteService::vecClientes){
+                 if(c.getidCliente() != idClienteFactura){
+                    continue;
+                 }else{
+                     Factura nuevaFactura(idClienteFactura);
+                     agregarProductos(nuevaFactura);
+                     FacturaService::Facturas.push_back(nuevaFactura);
+                     cout << "Se cierra la factura" << endl;
+                     return;
+                 }
+             }
+             cout << "El cliente no se encuentra en la base de datos." << endl;
+         }
+
+    }catch(...) {
+        cout << "Has ingresado un dato errado, intenta nuevamente " << endl;
+    }
 }
 
 void FacturaService::consultarFactura() {
-    int idFactura;
-    cout << "\nIngrese el código de la factura: ";
-    cin >> idFactura;
     if (FacturaService::Facturas.empty()){
         cout << "No hay facturas creadas\n";
     }else{
-        for (Factura &f: Facturas) {
-            if(f.getIdFactura() == idFactura){
-                f.descripcionFactura();
-                return;
+        try{
+            int idFactura;
+            cout << "\nIngrese el código de la factura: ";
+            cin >> idFactura;
+            for (Factura &f: Facturas) {
+                if(f.getIdFactura() == idFactura){
+                    f.descripcionFactura();
+                    return;
+                }
             }
+            cout << "No se encontro la factura solicitada\n";
+        }catch(...){
+            cout << "Recuerde que sólo puede ingresar números" << endl;
         }
-        /*for (int i = 0; i < Facturas.size(); ++i) {
-            if(Facturas[i].getIdFactura() == idFactura){
-                Facturas[i].descripcionFactura();
-                return;
-            }
-        }*/
-        cout << "No se encontro la factura solicitada\n";
 
     }
 }
@@ -60,23 +125,30 @@ void FacturaService::consultarTodasLasFactura() {
         cout << "No hay facturas creadas\n";
     }else{
         for (Factura &f: Facturas) {
-
+            f.descripcionFactura();
         }
     }
 }
 
 void FacturaService::eliminarFactura() {
-    int idFactura;
-    cout << "\nIngrese el código de la factura: ";
-    cin >> idFactura;
+    /********************/
     if (FacturaService::Facturas.empty()){
         cout << "No hay facturas creadas\n";
     }else{
-        for (Factura &f: Facturas) {
-            if(f.getIdFactura() == idFactura){
-
+        try {
+            int idFactura;
+            cout << "\nIngrese el codigo de la factura: ";
+            cin >> idFactura;
+            for (int i = 0; i < Facturas.size(); ++i) {
+                if(Facturas[i].getIdFactura() == idFactura){
+                    Facturas.erase(Facturas.begin() + i);
+                    cout << "Factura eliminada con exito\n";
+                    break;
+                }
             }
             cout << "No se encontro la factura solicitada\n";
+        }catch(...){
+            cout << "Recuerde que sólo puede ingresar números" << endl;
         }
     }
 }

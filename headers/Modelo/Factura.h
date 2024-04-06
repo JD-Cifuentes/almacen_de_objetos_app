@@ -5,6 +5,7 @@
 #ifndef PROYECTO_FACTURA_H
 #define PROYECTO_FACTURA_H
 #include "../../utils/headers/PrintUtils.h"
+#include "Product.h"
 #include <chrono>
 #include <vector>
 #include <iostream>
@@ -16,17 +17,19 @@ private:
     int idFactura;
     int idCliente;
     chrono::year_month_day fechaFactura;
-    double totalFactura;
-    vector<vector<int>> productosFacturados;
+    double totalFactura = 0;
+    vector<Product> productosFacturados;
 
 public:
     Factura(int idCliente);
 
-    //agregarProductoVendido(Producto nuevoProducto);
-
+    void agregarProductoVendido(const Product& nuevoProducto);
     void descripcionFactura();
 
-    int getIdFactura();
+    void setTotalFactura (double nuevoMonto);
+    double getTotalFactura();
+    int getIdFactura() const;
+    chrono::year_month_day getFechaFactura();
 
 };
 

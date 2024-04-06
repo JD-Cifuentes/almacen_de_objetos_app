@@ -14,21 +14,42 @@ Factura::Factura(int idCliente) {
     Factura::fechaFactura = chrono::year_month_day(chrono::floor<chrono::days>(actual));
     Factura::contadorIdFactura++;
 }
+void Factura::agregarProductoVendido(const Product& nuevoProducto) {
+    productosFacturados.push_back(nuevoProducto);
+}
 
 void Factura::descripcionFactura() {
-    /*////////////////////*/
     PrintUtils::printDosColumnas("Factura ID", idFactura);
     PrintUtils::printDosColumnas("Cliente ID", idCliente);
     PrintUtils::printDosColumnas("Fecha de compra", fechaFactura);
     PrintUtils::printDosColumnas("Total de la compra", totalFactura);
-// Factura ID
-    for(vector<int> productoFacturado : productosFacturados){
-
+    PrintUtils::printFilaProducto("ID_Producto", "Nombre",
+                                  "Cantidad Vendida", "Precio");
+    for(Product productoFac : productosFacturados){
+        PrintUtils::printFilaProducto(productoFac.getIdProducto(),
+                                      productoFac.getNombreProducto(),
+                                      productoFac.getCantidad(),
+                                      productoFac.getPrecioVenta());
     }
+    cout << "\n" << endl;
 }
 
-int Factura::getIdFactura() {
+int Factura::getIdFactura() const {
     return idFactura;
 }
+
+chrono::year_month_day Factura::getFechaFactura() {
+    return fechaFactura;
+}
+
+void Factura::setTotalFactura(double nuevoMonto) {
+    totalFactura = nuevoMonto;
+}
+
+double Factura::getTotalFactura() {
+    return totalFactura;
+}
+
+
 
 

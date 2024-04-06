@@ -4,19 +4,19 @@
 
 #include "../../headers/Vista/MenuFactura.h"
 
-
 void MenuFactura::menuParaFacturas() {
-    PrintUtils::printCenter("Bienvenido al menu de facturas");
-    PrintUtils::printCenter("A continuacion seleccione la opcion deseada");
-    PrintUtils::printTabular("1 - Generar factura");
-    PrintUtils::printTabular("2 - Consultar factura");
-    PrintUtils::printTabular("3 - Consultar todas las facturas");
-    PrintUtils::printTabular("4 - Eliminar factura");
-    PrintUtils::printTabular("0 - Regresar al menu principal");
 
-   /* int opcion = 0;
+
+    int opcion = 0;
     do {
         cout << "\n\n";
+        PrintUtils::printCenter("Bienvenido al menu de facturas");
+        PrintUtils::printCenter("A continuacion seleccione la opcion deseada");
+        PrintUtils::printTabular("1 - Generar factura");
+        PrintUtils::printTabular("2 - Consultar factura");
+        PrintUtils::printTabular("3 - Consultar todas las facturas");
+        PrintUtils::printTabular("4 - Eliminar factura");
+        PrintUtils::printTabular("0 - Regresar al menu principal");
         cin >> opcion;
         switch (opcion) {
             case 1:
@@ -37,5 +37,5 @@ void MenuFactura::menuParaFacturas() {
                 std::cout << "Opcion no valida" << std::endl;
         }
 
-    } while (opcion != 0); */
+    } while (opcion != 0);
 }

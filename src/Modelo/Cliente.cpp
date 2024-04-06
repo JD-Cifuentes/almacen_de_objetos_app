@@ -11,7 +11,8 @@ using namespace std;
 Cliente::Cliente(int idCliente,  string nameCliente, chrono::year_month_day fechaNacimiento) {
     Cliente::idCliente = idCliente;
     Cliente::nameCliente = nameCliente;
-    Cliente::fechaNacimiento = chrono::year_month_day{chrono::year(year), chrono::month(month), chrono::day(day)};
+    //se corrige asignacion de fecha
+    Cliente::fechaNacimiento = fechaNacimiento;
 }
 void Cliente::show_Cliente() {
     cout << "ID cliente: " << idCliente << endl;

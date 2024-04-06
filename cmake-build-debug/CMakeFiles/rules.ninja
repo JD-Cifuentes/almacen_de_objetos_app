@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = "C:\Program Files\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\felip\OneDrive\Documents\almacen_de_objetos_app -BC:\Users\felip\OneDrive\Documents\almacen_de_objetos_app\cmake-build-debug
+  command = "C:\Program Files\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\San\Documents\GitHub\Santiago-POO\almacen_de_objetos_app -BC:\Users\San\Documents\GitHub\Santiago-POO\almacen_de_objetos_app\cmake-build-debug
   description = Re-running CMake...
   generator = 1
 
