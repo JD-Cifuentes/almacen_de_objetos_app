@@ -10,7 +10,7 @@ using namespace std;
 
 class MenuProduct {
 public:
-    static void menuProduct();
+    static void menuParaProductos();
 };
 
 #endif //ALMACEN_DE_OBJETOS_APP_MENUPRODUCT_H

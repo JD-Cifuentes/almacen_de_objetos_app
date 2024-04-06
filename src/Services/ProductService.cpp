@@ -216,7 +216,6 @@ void ProductService::actualizarProducto(){
             do{
                 try{
                     cout << "Ingrese el Nombre del Producto: " << endl;
-                    cout << "Ingrese el Nombre del Producto: " << endl;
                     cin.ignore(); // Ignorar el salto de línea pendiente en el buffer
                     getline(cin, nombreProducto);
                     if (nombreProducto.empty()) {

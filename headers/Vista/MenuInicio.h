@@ -9,7 +9,7 @@
 #include <iostream>
 #include "../../utils/headers/PrintUtils.h"
 #include "../../headers/Vista/MenuFactura.h"
-// #include "../../headers/Vista/MenuProducto.h"
+#include "../../headers/Vista/MenuProduct.h"
 #include "../../headers/Vista/MenuCliente.h"
 using namespace std;
 

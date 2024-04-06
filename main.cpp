@@ -16,8 +16,9 @@ int main() {
     cout << ymd;
 */
    while(true){
-        MenuFactura::menuParaFacturas();
+        //MenuFactura::menuParaFacturas();
         //MenuProduct::menuProduct();
+        MenuInicio::menuParaIniciar();
         break;
    }
 

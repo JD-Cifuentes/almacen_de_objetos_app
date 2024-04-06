@@ -10,7 +10,7 @@ void menu() {
     PrintUtils::printTabular("0. Regresar al menu principal");
 }
 
-void MenuProduct :: menuProduct(){
+void MenuProduct ::menuParaProductos() {
     int option;
     bool validacion = false;
     do {
@@ -30,19 +30,15 @@ void MenuProduct :: menuProduct(){
                     break;
                 case 1:
                     ProductService::crearProducto();
-                    validacion = true;
                     break;
                 case 2:
                     ProductService::buscarProducto();
-                    validacion = true;
                     break;
                 case 3:
                     ProductService::actualizarProducto();
-                    validacion = true;
                     break;
                 case 4:
                     ProductService::eliminarProducto();
-                    validacion = true;
                     break;
                 default:
                     throw invalid_argument("Error: Opcion Incorrecta");

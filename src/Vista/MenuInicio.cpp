@@ -24,7 +24,7 @@ void MenuInicio::menuParaIniciar() {
             MenuCliente::menuParaClientes();
             break;
         case 2:
-            //MenuProducto::menuParaProductos();
+            MenuProduct::menuParaProductos();
             break;
         case 3:
             MenuFactura::menuParaFacturas();
