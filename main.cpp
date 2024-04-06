@@ -21,7 +21,7 @@ int main() {
 
    while(true){
         //MenuFactura::menuParaFacturas();
-        MenuProduct::menu_product();
+       MenuProduct::menuProduct();
         break;
    }
 
