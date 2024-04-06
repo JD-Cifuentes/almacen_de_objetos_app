@@ -1,6 +1,7 @@
 #include "../../headers/Vista/MenuProduct.h"
 
 void menu() {
+    cout << "\n\n";
     PrintUtils::printCenter("Bienvenido al Menu de Productos");
     PrintUtils::printCenter("Seleccione la Opcion Deseada");
     PrintUtils::printTabular("1. Registar Producto");

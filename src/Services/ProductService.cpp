@@ -114,14 +114,10 @@ void ProductService::crearProducto() {
                 throw invalid_argument("Error: Ingrese un Mes Valido");
             }
             break;
-        } catch (invalid_argument &ex) {
+        } catch (runtime_error &ex) {
             cout << ex.what() << endl;
-            cin.clear();
-            cin.ignore();
         } catch (...) {
-            cout << "Error: Ocurrió un error inesperado" << endl;
-            cin.clear();
-            cin.ignore();
+            cout << "Error: Ocurrio un error inesperado" << endl;
         }
     }while (true);
 
@@ -129,20 +125,20 @@ void ProductService::crearProducto() {
         try{
             cout << "Ingrese la fecha de vencimiento del producto (Anio): " << endl;
             cin >> year;
-            if (cin.fail() || year < 2023) {
+            auto fechaActual = chrono::system_clock::to_time_t(chrono::system_clock::now());
+            tm* time_info = localtime(&fechaActual);
+            int mesActual = time_info->tm_mon + 1;
+            int anioActual = time_info->tm_year + 1900;
+            if (cin.fail() || year < anioActual || (month < mesActual && year <= anioActual)) {
                 cin.clear();
                 cin.ignore();
                 throw invalid_argument("Error: Ingrese un Anio Valido");
             }
             break;
-        } catch (invalid_argument &ex) {
+        } catch (runtime_error &ex) {
             cout << ex.what() << endl;
-            cin.clear();
-            cin.ignore();
         } catch (...) {
-            cout << "Error: Ocurrió un error inesperado" << endl;
-            cin.clear();
-            cin.ignore();
+            cout << "Error: Ocurrio un error inesperado" << endl;
         }
     }while (true);
 
@@ -174,7 +170,8 @@ void ProductService::buscarProducto() {
                 }
             }
             if (!bandera) {
-                cout << "No existe producto con el codigo: " << buscaProducto << endl;
+                cout<<"\n\n";
+                cout << "\tNo existe producto con el codigo: " << buscaProducto << endl;
                 mostrarProductos();
             }
             break;
@@ -302,7 +299,11 @@ void ProductService::actualizarProducto(){
                 try{
                     cout << "Ingrese la fecha de vencimiento del producto (Anio): " << endl;
                     cin >> year;
-                    if (cin.fail() || year < 2023) {
+                    auto fechaActual = chrono::system_clock::to_time_t(chrono::system_clock::now());
+                    tm* time_info = localtime(&fechaActual);
+                    int mesActual = time_info->tm_mon + 1;
+                    int anioActual = time_info->tm_year + 1900;
+                    if (cin.fail() || year < anioActual || (month < mesActual && year <= anioActual)) {
                         cin.clear();
                         cin.ignore();
                         throw invalid_argument("Error: Ingrese un Anio Valido");
