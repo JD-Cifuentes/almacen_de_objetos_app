@@ -1,6 +1,3 @@
-//
-// Created by felip on 29/03/2024.
-//
 
 #include "../../headers/Vista/MenuCliente.h"
 

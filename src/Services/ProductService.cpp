@@ -170,8 +170,9 @@ void ProductService::buscarProducto() {
                 }
             }
             if (!bandera) {
-                cout<<"\n\n";
+                cout<<"\n";
                 cout << "\tNo existe producto con el codigo: " << buscaProducto << endl;
+                cout<<"\n";
                 mostrarProductos();
             }
             break;

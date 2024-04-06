@@ -25,4 +25,5 @@ add_executable(proyecto main.cpp
         headers/Vista/MenuInicio.h
         src/Services/ClienteService.cpp
         headers/Services/ClienteService.h
+        src/Services/ProductService.cpp
 )

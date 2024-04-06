@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/Users/San/Documents/GitHub/Santiago-POO/almacen_de_objetos_app/cmake-build-debug/
+cmake_ninja_workdir = C$:/Users/felip/OneDrive/Documents/almacen_de_objetos_app/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target proyecto
 
@@ -49,73 +49,73 @@ cmake_ninja_workdir = C$:/Users/San/Documents/GitHub/Santiago-POO/almacen_de_obj
 
 build cmake_object_order_depends_target_proyecto: phony || CMakeFiles/proyecto.dir
 
-build CMakeFiles/proyecto.dir/main.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/San/Documents/GitHub/Santiago-POO/almacen_de_objetos_app/main.cpp || cmake_object_order_depends_target_proyecto
+build CMakeFiles/proyecto.dir/main.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/felip/OneDrive/Documents/almacen_de_objetos_app/main.cpp || cmake_object_order_depends_target_proyecto
   DEP_FILE = CMakeFiles\proyecto.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\proyecto.dir
   OBJECT_FILE_DIR = CMakeFiles\proyecto.dir
 
-build CMakeFiles/proyecto.dir/src/Modelo/Cliente.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/San/Documents/GitHub/Santiago-POO/almacen_de_objetos_app/src/Modelo/Cliente.cpp || cmake_object_order_depends_target_proyecto
+build CMakeFiles/proyecto.dir/src/Modelo/Cliente.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/felip/OneDrive/Documents/almacen_de_objetos_app/src/Modelo/Cliente.cpp || cmake_object_order_depends_target_proyecto
   DEP_FILE = CMakeFiles\proyecto.dir\src\Modelo\Cliente.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\proyecto.dir
   OBJECT_FILE_DIR = CMakeFiles\proyecto.dir\src\Modelo
 
-build CMakeFiles/proyecto.dir/src/Modelo/Factura.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/San/Documents/GitHub/Santiago-POO/almacen_de_objetos_app/src/Modelo/Factura.cpp || cmake_object_order_depends_target_proyecto
+build CMakeFiles/proyecto.dir/src/Modelo/Factura.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/felip/OneDrive/Documents/almacen_de_objetos_app/src/Modelo/Factura.cpp || cmake_object_order_depends_target_proyecto
   DEP_FILE = CMakeFiles\proyecto.dir\src\Modelo\Factura.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\proyecto.dir
   OBJECT_FILE_DIR = CMakeFiles\proyecto.dir\src\Modelo
 
-build CMakeFiles/proyecto.dir/src/Vista/MenuFactura.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/San/Documents/GitHub/Santiago-POO/almacen_de_objetos_app/src/Vista/MenuFactura.cpp || cmake_object_order_depends_target_proyecto
+build CMakeFiles/proyecto.dir/src/Vista/MenuFactura.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/felip/OneDrive/Documents/almacen_de_objetos_app/src/Vista/MenuFactura.cpp || cmake_object_order_depends_target_proyecto
   DEP_FILE = CMakeFiles\proyecto.dir\src\Vista\MenuFactura.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\proyecto.dir
   OBJECT_FILE_DIR = CMakeFiles\proyecto.dir\src\Vista
 
-build CMakeFiles/proyecto.dir/utils/sources/PrintUtils.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/San/Documents/GitHub/Santiago-POO/almacen_de_objetos_app/utils/sources/PrintUtils.cpp || cmake_object_order_depends_target_proyecto
+build CMakeFiles/proyecto.dir/utils/sources/PrintUtils.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/felip/OneDrive/Documents/almacen_de_objetos_app/utils/sources/PrintUtils.cpp || cmake_object_order_depends_target_proyecto
   DEP_FILE = CMakeFiles\proyecto.dir\utils\sources\PrintUtils.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\proyecto.dir
   OBJECT_FILE_DIR = CMakeFiles\proyecto.dir\utils\sources
 
-build CMakeFiles/proyecto.dir/src/Services/FacturaService.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/San/Documents/GitHub/Santiago-POO/almacen_de_objetos_app/src/Services/FacturaService.cpp || cmake_object_order_depends_target_proyecto
+build CMakeFiles/proyecto.dir/src/Services/FacturaService.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/felip/OneDrive/Documents/almacen_de_objetos_app/src/Services/FacturaService.cpp || cmake_object_order_depends_target_proyecto
   DEP_FILE = CMakeFiles\proyecto.dir\src\Services\FacturaService.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\proyecto.dir
   OBJECT_FILE_DIR = CMakeFiles\proyecto.dir\src\Services
 
-build CMakeFiles/proyecto.dir/src/Vista/MenuProduct.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/San/Documents/GitHub/Santiago-POO/almacen_de_objetos_app/src/Vista/MenuProduct.cpp || cmake_object_order_depends_target_proyecto
+build CMakeFiles/proyecto.dir/src/Vista/MenuProduct.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/felip/OneDrive/Documents/almacen_de_objetos_app/src/Vista/MenuProduct.cpp || cmake_object_order_depends_target_proyecto
   DEP_FILE = CMakeFiles\proyecto.dir\src\Vista\MenuProduct.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\proyecto.dir
   OBJECT_FILE_DIR = CMakeFiles\proyecto.dir\src\Vista
 
-build CMakeFiles/proyecto.dir/src/Modelo/Product.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/San/Documents/GitHub/Santiago-POO/almacen_de_objetos_app/src/Modelo/Product.cpp || cmake_object_order_depends_target_proyecto
+build CMakeFiles/proyecto.dir/src/Modelo/Product.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/felip/OneDrive/Documents/almacen_de_objetos_app/src/Modelo/Product.cpp || cmake_object_order_depends_target_proyecto
   DEP_FILE = CMakeFiles\proyecto.dir\src\Modelo\Product.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\proyecto.dir
   OBJECT_FILE_DIR = CMakeFiles\proyecto.dir\src\Modelo
 
-build CMakeFiles/proyecto.dir/src/Services/ProductService.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/San/Documents/GitHub/Santiago-POO/almacen_de_objetos_app/src/Services/ProductService.cpp || cmake_object_order_depends_target_proyecto
+build CMakeFiles/proyecto.dir/src/Services/ProductService.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/felip/OneDrive/Documents/almacen_de_objetos_app/src/Services/ProductService.cpp || cmake_object_order_depends_target_proyecto
   DEP_FILE = CMakeFiles\proyecto.dir\src\Services\ProductService.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\proyecto.dir
   OBJECT_FILE_DIR = CMakeFiles\proyecto.dir\src\Services
 
-build CMakeFiles/proyecto.dir/src/Vista/MenuCliente.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/San/Documents/GitHub/Santiago-POO/almacen_de_objetos_app/src/Vista/MenuCliente.cpp || cmake_object_order_depends_target_proyecto
+build CMakeFiles/proyecto.dir/src/Vista/MenuCliente.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/felip/OneDrive/Documents/almacen_de_objetos_app/src/Vista/MenuCliente.cpp || cmake_object_order_depends_target_proyecto
   DEP_FILE = CMakeFiles\proyecto.dir\src\Vista\MenuCliente.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\proyecto.dir
   OBJECT_FILE_DIR = CMakeFiles\proyecto.dir\src\Vista
 
-build CMakeFiles/proyecto.dir/src/Vista/MenuInicio.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/San/Documents/GitHub/Santiago-POO/almacen_de_objetos_app/src/Vista/MenuInicio.cpp || cmake_object_order_depends_target_proyecto
+build CMakeFiles/proyecto.dir/src/Vista/MenuInicio.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/felip/OneDrive/Documents/almacen_de_objetos_app/src/Vista/MenuInicio.cpp || cmake_object_order_depends_target_proyecto
   DEP_FILE = CMakeFiles\proyecto.dir\src\Vista\MenuInicio.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\proyecto.dir
   OBJECT_FILE_DIR = CMakeFiles\proyecto.dir\src\Vista
 
-build CMakeFiles/proyecto.dir/src/Services/ClienteService.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/San/Documents/GitHub/Santiago-POO/almacen_de_objetos_app/src/Services/ClienteService.cpp || cmake_object_order_depends_target_proyecto
+build CMakeFiles/proyecto.dir/src/Services/ClienteService.cpp.obj: CXX_COMPILER__proyecto_unscanned_Debug C$:/Users/felip/OneDrive/Documents/almacen_de_objetos_app/src/Services/ClienteService.cpp || cmake_object_order_depends_target_proyecto
   DEP_FILE = CMakeFiles\proyecto.dir\src\Services\ClienteService.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\proyecto.dir
@@ -144,7 +144,7 @@ build proyecto.exe: CXX_EXECUTABLE_LINKER__proyecto_Debug CMakeFiles/proyecto.di
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\San\Documents\GitHub\Santiago-POO\almacen_de_objetos_app\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D C:\Users\felip\OneDrive\Documents\almacen_de_objetos_app\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -155,7 +155,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\San\Documents\GitHub\Santiago-POO\almacen_de_objetos_app\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\San\Documents\GitHub\Santiago-POO\almacen_de_objetos_app -BC:\Users\San\Documents\GitHub\Santiago-POO\almacen_de_objetos_app\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D C:\Users\felip\OneDrive\Documents\almacen_de_objetos_app\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\felip\OneDrive\Documents\almacen_de_objetos_app -BC:\Users\felip\OneDrive\Documents\almacen_de_objetos_app\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -173,7 +173,7 @@ build proyecto: phony proyecto.exe
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/San/Documents/GitHub/Santiago-POO/almacen_de_objetos_app/cmake-build-debug
+# Folder: C:/Users/felip/OneDrive/Documents/almacen_de_objetos_app/cmake-build-debug
 
 build all: phony proyecto.exe
 
@@ -184,14 +184,14 @@ build all: phony proyecto.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/WindowsPaths.cmake C$:/Users/San/Documents/GitHub/Santiago-POO/almacen_de_objetos_app/CMakeLists.txt CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeRCCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/WindowsPaths.cmake C$:/Users/felip/OneDrive/Documents/almacen_de_objetos_app/CMakeLists.txt CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeRCCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/WindowsPaths.cmake C$:/Users/San/Documents/GitHub/Santiago-POO/almacen_de_objetos_app/CMakeLists.txt CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeRCCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake: phony
+build C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.3.4/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/WindowsPaths.cmake C$:/Users/felip/OneDrive/Documents/almacen_de_objetos_app/CMakeLists.txt CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeRCCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake: phony
 
 
 #############################################
