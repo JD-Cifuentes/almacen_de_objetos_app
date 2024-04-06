@@ -52,3 +52,17 @@
 1165	1598	7341451047519063	proyecto.exe	cb1b7c5fbced8698
 4	1393	7341452618894232	CMakeFiles/proyecto.dir/src/Services/ProductService.cpp.obj	8740aaefbdaba1ff
 1394	2195	7341452626884348	proyecto.exe	cb1b7c5fbced8698
+2	832	7341456040266425	CMakeFiles/proyecto.dir/src/Vista/MenuInicio.cpp.obj	4354343c681a544e
+4	907	7341457260911769	CMakeFiles/proyecto.dir/src/Vista/MenuInicio.cpp.obj	4354343c681a544e
+2	823	7341457594714552	CMakeFiles/proyecto.dir/src/Vista/MenuInicio.cpp.obj	4354343c681a544e
+4	805	7341458039394536	CMakeFiles/proyecto.dir/src/Vista/MenuInicio.cpp.obj	4354343c681a544e
+805	1260	7341458043885199	proyecto.exe	cb1b7c5fbced8698
+11	1069	7341459019772068	CMakeFiles/proyecto.dir/src/Vista/MenuInicio.cpp.obj	4354343c681a544e
+4	1071	7341459019772068	CMakeFiles/proyecto.dir/src/Vista/MenuProduct.cpp.obj	473297f20e48c715
+1072	1576	7341459024799855	proyecto.exe	cb1b7c5fbced8698
+3	904	7341459268742241	CMakeFiles/proyecto.dir/src/Vista/MenuProduct.cpp.obj	473297f20e48c715
+905	1418	7341459274689809	proyecto.exe	cb1b7c5fbced8698
+3	817	7341459553913258	CMakeFiles/proyecto.dir/src/Vista/MenuProduct.cpp.obj	473297f20e48c715
+818	1313	7341459558819664	proyecto.exe	cb1b7c5fbced8698
+3	840	7341459803924914	CMakeFiles/proyecto.dir/src/Vista/MenuInicio.cpp.obj	4354343c681a544e
+840	1336	7341459808809091	proyecto.exe	cb1b7c5fbced8698

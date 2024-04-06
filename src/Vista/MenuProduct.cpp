@@ -1,9 +1,10 @@
 #include "../../headers/Vista/MenuProduct.h"
 
 void menu() {
-    cout << "\n\n";
+    cout << "\n";
     PrintUtils::printCenter("Bienvenido al Menu de Productos");
     PrintUtils::printCenter("Seleccione la Opcion Deseada");
+    cout << "\n";
     PrintUtils::printTabular("1. Registar Producto");
     PrintUtils::printTabular("2. Buscar Producto");
     PrintUtils::printTabular("3. Actualizar Producto");
@@ -26,7 +27,7 @@ void MenuProduct ::menuParaProductos() {
             }
             switch(option){
                 case 0:
-                    cout << "Saliendo del programa..." << endl;
+                    cout << "Saliendo del Menu para Productos" << endl;
                     validacion = true;
                     break;
                 case 1:
