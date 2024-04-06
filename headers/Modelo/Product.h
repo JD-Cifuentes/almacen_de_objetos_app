@@ -23,8 +23,7 @@ public:
             double precioVentas,
             chrono::year_month_day fechaVence);
     bool descontarCantidadVendida(int cantidadVendida);
-    void showProduct();
-    void setIdProducto(int idProductoNuevo);
+    void mostrarProducto();
     void setNombreProducto(string nuevoNombre);
     void setCantidad(int cantidadVendida);
     void setPrecioVenta(double nuevoPrecio);

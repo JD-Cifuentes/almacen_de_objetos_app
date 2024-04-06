@@ -164,7 +164,7 @@ void ProductService::buscarProducto() {
             bool bandera = false;
             for (Product Producto: Productos) {
                 if (Producto.getIdProducto() == buscaProducto) {
-                    Producto.showProduct();
+                    Producto.mostrarProducto();
                     bandera = true;
                     break;
                 }
@@ -387,6 +387,6 @@ void ProductService::eliminarProducto() {
 
 void ProductService::mostrarProductos() {
     for (Product Producto: Productos) {
-        Producto.showProduct();
+        Producto.mostrarProducto();
     }
 }

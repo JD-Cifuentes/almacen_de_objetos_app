@@ -24,19 +24,13 @@ bool Product::descontarCantidadVendida(int cantidadVendida){
     }
 }
 
-void Product::showProduct() {
+void Product::mostrarProducto() {
     cout << "Codigo: " << idProducto << endl;
     cout << "Nombre: " << nombreProducto << endl;
     cout << "Precio: " << precioVenta << endl;
     cout << "Cantidad: " << cantidad << endl;
     cout << "Fecha de Vencimiento: " << fechaVencimiento << endl;
 
-}
-
-
-
-void Product::setIdProducto(int idProductoNuevo) {
-    idProducto = idProductoNuevo;
 }
 
 void Product::setNombreProducto(string nuevoNombre) {
