@@ -10,7 +10,7 @@ vector<Cliente> ClienteService::vecClientes;
 void ClienteService::crearCliente() {
     int idCliente, day, month, year;
     string nameCliente;
-    chrono::year_month_day fechaNacimiento;
+    chrono::year_month_day fechaNacimiento{};
 
     do {
         try {
@@ -57,7 +57,7 @@ void ClienteService::crearCliente() {
 
     do {
         try {
-            cout << "Ingrese la fecha de Nacmiento del Clientec(Dia): " << endl;
+            cout << "Ingrese la fecha de Nacmiento del Cliente(Dia): " << endl;
             cin >> day;
             if (cin.fail() || day <= 0 || day > 31) {
                 cin.clear();
@@ -74,7 +74,7 @@ void ClienteService::crearCliente() {
 
     do {
         try {
-            cout << "Ingrese la fecha de Nacmiento del Clientec(Mes): " << endl;
+            cout << "Ingrese la fecha de Nacimiento del Cliente(Mes): " << endl;
             cin >> month;
             if (cin.fail() || month <= 0 || month > 12) {
                 cin.clear();

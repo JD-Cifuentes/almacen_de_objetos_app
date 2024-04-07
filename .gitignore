@@ -32,7 +32,7 @@
 *.app
 
 ### IntelliJ IDEA ###
-.cmake-build-debug
+*.cmake-build-debug
 .idea
 *.iws
 *.iml

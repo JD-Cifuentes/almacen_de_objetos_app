@@ -4,7 +4,7 @@
 void MenuCliente::menuParaClientes() {
     PrintUtils::printCenter("Bienvenido al menu de Clientes");
     PrintUtils::printCenter("A continuacion seleccione la opcion deseada");
-    PrintUtils::printTabular("1 - Añadir un cliente");
+    PrintUtils::printTabular("1 - Anadir un cliente");
     PrintUtils::printTabular("2 - Consultar un cliente");
     PrintUtils::printTabular("3 - Consultar todas los clientes");
     PrintUtils::printTabular("4 - Eliminar un cliente");

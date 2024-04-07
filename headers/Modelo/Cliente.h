@@ -16,7 +16,6 @@ private:
     int idCliente;
     string nameCliente;
 
-    //se eliminan variables year, month, day
     chrono::year_month_day fechaNacimiento;
 public:
     Cliente(int idCliente , string nameCliente, chrono::year_month_day fechaNacimiento);

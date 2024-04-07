@@ -9,10 +9,9 @@ Product::Product(int idProducto, string nombreProductos, int cantidad, double pr
     Product::nombreProducto = nombreProductos;
     Product::cantidad = cantidad;
     Product::precioVenta = precioVentas;
-    //se corrige asignacion de fecha
     Product::fechaVencimiento = fechaVence;
 }
-//se agrega metodo para descontar cantidad
+
 bool Product::descontarCantidadVendida(int cantidadVendida){
     if(cantidadVendida > getCantidad()){
         cout << "No hay cantidad suficiente\n" << endl;

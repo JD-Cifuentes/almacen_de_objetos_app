@@ -47,6 +47,7 @@ void agregarProductos(Factura& nuevaFactura){
                     break;
                 }
             }
+            cout << "No se encontró el producto.\n"<<endl;
         }catch (...){
             cout << "El dato ingresado es erróneo, intenta nuevamente.\n" << endl;
         }
@@ -54,26 +55,9 @@ void agregarProductos(Factura& nuevaFactura){
 }
 
 void FacturaService::crearYGuardarFactura() {
-//!!!!!!!cliente y producto creado para pruebas!!!!!!!!
-Cliente clientePrueba(111,
-                      "Juan D",
-                      chrono::year_month_day(chrono::year(1995),
-                                                            chrono::month(4),
-                                                            chrono::day(2)));
-ClienteService::vecClientes.push_back(clientePrueba);
-
-Product product1(1,
-                 "coke",
-                 20,
-                 1000.0,
-                 chrono::year_month_day(chrono::year(2024),
-                                                            chrono::month(4),
-                                                            chrono::day(7)));
-ProductService::Productos.push_back(product1);
-//!!!!!!!!!!!!!!!!!!!!!!!!
     try{
          if(ClienteService::vecClientes.empty() || ProductService::Productos.empty()){
-             cout << "No hay clilentes o productos creados\n";
+             cout << "No hay clientes o productos creados\n";
              return;
          }else{
              int idClienteFactura;
@@ -86,7 +70,7 @@ ProductService::Productos.push_back(product1);
                      Factura nuevaFactura(idClienteFactura);
                      agregarProductos(nuevaFactura);
                      FacturaService::Facturas.push_back(nuevaFactura);
-                     cout << "Se cierra la factura" << endl;
+                     cout << "Se cierra la factura con referencia ID: "<< nuevaFactura.getIdFactura() << endl;
                      return;
                  }
              }
@@ -131,7 +115,6 @@ void FacturaService::consultarTodasLasFactura() {
 }
 
 void FacturaService::eliminarFactura() {
-    /********************/
     if (FacturaService::Facturas.empty()){
         cout << "No hay facturas creadas\n";
     }else{

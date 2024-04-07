@@ -12,7 +12,6 @@ class Product {
 private:
     static vector<Product> Productos;
     static int contaIdProducto;
-    //se eliminan variables year, month, day
     int idProducto, cantidad;
     string nombreProducto;
     double precioVenta;
