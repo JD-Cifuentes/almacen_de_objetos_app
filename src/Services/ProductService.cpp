@@ -159,7 +159,7 @@ void ProductService::buscarProducto() {
             if (cin.fail()) {
                 cin.clear();
                 cin.ignore();
-                throw invalid_argument("Error: Ingrese un Numero Entero");
+                throw invalid_argument("Error: Ingrese un numero entero");
             }
             bool bandera = false;
             for (Product Producto: Productos) {
