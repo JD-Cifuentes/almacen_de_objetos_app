@@ -171,9 +171,12 @@ void ProductService::buscarProducto() {
             }
             if (!bandera) {
                 cout<<"\n";
-                cout << "\tNo existe producto con el codigo: " << buscaProducto << endl;
+                cout <<"\tNo existe producto con el codigo: " << buscaProducto << endl;
                 cout<<"\n";
+                cout<<"Estos son los Productos que existen en el momento" <<endl;
+                cout<<"----------------------------------------------------\n";
                 mostrarProductos();
+                cout<<"----------------------------------------------------\n";
             }
             break;
         } catch (invalid_argument &ex) {
