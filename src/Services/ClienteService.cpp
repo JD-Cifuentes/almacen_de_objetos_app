@@ -11,7 +11,8 @@ void ClienteService::crearCliente() {
     int idCliente, day, month, year;
     string nameCliente;
     chrono::year_month_day fechaNacimiento;
-    // Obtener el año actual
+
+    // Obtener el año actual para comparar
     auto now = chrono::system_clock::now();
     time_t now_time = chrono::system_clock::to_time_t(now);
     tm *ltm = localtime(&now_time);
