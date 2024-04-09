@@ -15,7 +15,7 @@ void MenuCliente::menuParaClientes() {
 
     int opcion = 0;
     do {
-        mostrarMenu()
+        mostrarMenu();
         cout << "\n\n";
         cin >> opcion;
         switch (opcion) {
