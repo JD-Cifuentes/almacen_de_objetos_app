@@ -17,8 +17,12 @@ void agregarProductos(Factura& nuevaFactura){
                 break;
             }
             int CodProducto = stoi(entradaCodProducto);
+            int IdDelUltimoProducto = ProductService::Productos.back().getIdProducto();
             for(Product& p : ProductService::Productos){
                 if(p.getIdProducto() != CodProducto){
+                    if(IdDelUltimoProducto == p.getIdProducto()) {
+                        cout << "No se encontro el producto.\n"<<endl;
+                    }
                     continue;
                 }else{
                     if(p.getCantidad() < 1 || p.getFechaVencimiento() <= nuevaFactura.getFechaFactura()){
@@ -47,7 +51,7 @@ void agregarProductos(Factura& nuevaFactura){
                     break;
                 }
             }
-            cout << "No se encontró el producto.\n"<<endl;
+
         }catch (...){
             cout << "El dato ingresado es erróneo, intenta nuevamente.\n" << endl;
         }
