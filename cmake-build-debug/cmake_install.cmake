@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/felip/OneDrive/Documents/almacen_de_objetos_app
+# Install script for directory: C:/Users/San/Documents/GitHub/Santiago-POO/almacen_de_objetos_app
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/felip/OneDrive/Documents/almacen_de_objetos_app/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/San/Documents/GitHub/Santiago-POO/almacen_de_objetos_app/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
