@@ -12,6 +12,7 @@ using namespace std;
 
 class MenuCliente {
 public:
+    static void mostrarMenu();
     static void menuParaClientes();
 };
 

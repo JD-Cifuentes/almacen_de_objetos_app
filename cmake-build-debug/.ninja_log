@@ -14,3 +14,13 @@
 173	9004	7341491710817674	CMakeFiles/proyecto.dir/src/Modelo/Product.cpp.obj	603f19a03985e7a9
 6376	10219	7341491723013078	CMakeFiles/proyecto.dir/src/Vista/MenuInicio.cpp.obj	c1556a360ea7be70
 206	6389	7341491683969983	CMakeFiles/proyecto.dir/src/Services/ClienteService.cpp.obj	795a518151135bb
+5	3953	7343921841324941	CMakeFiles/proyecto.dir/main.cpp.obj	827186c5dfa0cfa7
+150	3967	7343921841464997	CMakeFiles/proyecto.dir/src/Vista/MenuCliente.cpp.obj	b2876d22297ff461
+105	3972	7343921841565006	CMakeFiles/proyecto.dir/src/Vista/MenuFactura.cpp.obj	283e97c824d092c2
+113	3977	7343921841604992	CMakeFiles/proyecto.dir/src/Vista/MenuInicio.cpp.obj	c1556a360ea7be70
+137	4169	7343921843527916	CMakeFiles/proyecto.dir/src/Services/ProductService.cpp.obj	99288a35e1192c0c
+162	4178	7343921843608077	CMakeFiles/proyecto.dir/src/Services/ClienteService.cpp.obj	795a518151135bb
+126	4421	7343921846078046	CMakeFiles/proyecto.dir/src/Services/FacturaService.cpp.obj	6fa0a423d6d4bc6e
+4421	6173	7343921863568243	proyecto.exe	cb1b7c5fbced8698
+5	1693	7343923863561400	CMakeFiles/proyecto.dir/src/Vista/MenuCliente.cpp.obj	b2876d22297ff461
+1694	2518	7343923871676945	proyecto.exe	cb1b7c5fbced8698

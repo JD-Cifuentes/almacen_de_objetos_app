@@ -11,6 +11,11 @@ void ClienteService::crearCliente() {
     int idCliente, day, month, year;
     string nameCliente;
     chrono::year_month_day fechaNacimiento;
+    // Obtener el año actual
+    auto now = chrono::system_clock::now();
+    time_t now_time = chrono::system_clock::to_time_t(now);
+    tm *ltm = localtime(&now_time);
+    int currentYear = 1900 + ltm->tm_year;
 
     do {
         try {
@@ -93,7 +98,7 @@ void ClienteService::crearCliente() {
         try {
             cout << "Ingrese la fecha de Nacmiento del Cliente (Año): " << endl;
             cin >> year;
-            if (cin.fail()) {
+            if (cin.fail() || year > currentYear) {
                 cin.clear();
                 cin.ignore();
                 throw invalid_argument("Error: Ingrese un Año Valido");
@@ -140,7 +145,7 @@ void ClienteService::eliminarCliente() {
     for(int i = 0; i < n; i++){
         if(vecClientes[i].getidCliente() == buscar){
             bandera = true;
-            cout << "El cliente con el ID" << buscar<<"Ya no tiene datos registrados" << endl;
+            cout << "El cliente con el ID " << buscar << " Ya no tiene datos registrados" << endl;
             vecClientes.erase(vecClientes.begin() + i);
             break;
         }
